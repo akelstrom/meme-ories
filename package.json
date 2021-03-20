@@ -19,6 +19,6 @@
   "homepage": "https://github.com/jbeedle19/game-project#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.12.0"
+    "mongoose": "^5.12.1"
   }
 }
