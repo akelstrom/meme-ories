@@ -41,7 +41,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addQuestion(questionText: String): Question
-    addAnswer(questionId: ID!, answerBody: String!); Answer
+    addAnswer(questionId: ID!, answerBody: String!): Answer
 }
 `
 
