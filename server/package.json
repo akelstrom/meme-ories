@@ -4,21 +4,22 @@
   "description": "Game for Final Project **Update**",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbeedle19/game-project.git"
-  },
+  "keywords": [],
   "author": "Alexandra Kelstrom, Stefanie Tinsley, Kristy Zurmuhlen, and Joshua Beedle",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jbeedle19/game-project/issues"
-  },
-  "homepage": "https://github.com/jbeedle19/game-project#readme",
   "dependencies": {
+    "apollo-server-express": "^2.22.2",
+    "bcrypt": "^5.0.1",
     "express": "^4.17.1",
-    "mongoose": "^5.12.1"
+    "faker": "^5.5.2",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
