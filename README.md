@@ -17,7 +17,7 @@ Placeholder User Story
 
 [Video Link](placeholder-vid-link)
 ## Website
-heroku site here
+https://shits-n-giggles.herokuapp.com/
 ## Built With
 * MongoDB & Mongoose
 * Express JS
