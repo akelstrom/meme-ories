@@ -1,4 +1,5 @@
 import React from "react";
+// Do we want to use Jumbotron like Shop Shop used?
 //import Jumbotron from "../components/Jumbotron";
 
 const NoMatch = () => {
