@@ -1,4 +1,4 @@
-# Game Project (Replace)
+# Sh*ts n' Giggles
 ## Table of Contents
 * [Description](#description)
 * [User Story](#user-story)
@@ -23,9 +23,10 @@ heroku site here
 * Express JS
 * React
 * Node JS
+* GraphQL
+* Redux
+* JWTs
 * 
-*
-*
 ## Contributors
 * Alexandra Kelstrom
 * Stefanie Tinsley
