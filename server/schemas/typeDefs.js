@@ -1,5 +1,5 @@
 //import gql tagged template function
-const { gql } = require('apoolo-server-express');
+const { gql } = require('apollo-server-express');
 
 //create our typeDefs
 const typeDefs = gql `
