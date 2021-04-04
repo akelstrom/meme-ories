@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 function Nav() {
 
     function showNavigation() {
-        // Needs utils/auth.js filled out for this to function correctly
-        if (Auth.loggedIn()) {
+        // Needs utils/auth.js filled out for this to function
+        if (/* Auth.loggedIn() */false) {
             return (
                 <ul>
                     <li>
