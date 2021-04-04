@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
-// Are we planning to use Redux for Global State stuff?
 import { Provider } from 'react-redux';
 import store from './utils/store';
 
