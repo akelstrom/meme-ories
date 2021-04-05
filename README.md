@@ -1,4 +1,4 @@
-# Game Project (Replace)
+# Sh*ts n' Giggles
 ## Table of Contents
 * [Description](#description)
 * [User Story](#user-story)
@@ -17,15 +17,16 @@ Placeholder User Story
 
 [Video Link](placeholder-vid-link)
 ## Website
-heroku site here
+https://shits-n-giggles.herokuapp.com/
 ## Built With
 * MongoDB & Mongoose
 * Express JS
 * React
 * Node JS
+* GraphQL
+* Redux
+* JWTs
 * 
-*
-*
 ## Contributors
 * Alexandra Kelstrom
 * Stefanie Tinsley
