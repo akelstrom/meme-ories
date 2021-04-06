@@ -66,17 +66,14 @@ const resolvers = {
             return { token, user};
         },
         addQuestion: async(parent, args, context) => {
-            if (context.user) {
-                const thought = await Thought.create({ ...args, username: context.user.username });
-
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { questions: question._id } },
-                    { new: true }
-                );
+            // if (context.user) {
+            //     const question = await Question.create({ ...args, username: context.user.username });
                 
-                return question;
-            }
+            //     return question;
+            // }
+
+            const question = await Question.create({...args})
+            return question;
         },
         addAnswer: async (parent, { thoughtId, reactionBody }, context) => {
             if(context.user) {
