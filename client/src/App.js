@@ -13,6 +13,9 @@ import NoMatch from './pages/NoMatch';
 import Nav from './components/Nav';
 import './App.css';
 
+// import io from 'socket.io-client';
+// const socket = io();
+
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token')

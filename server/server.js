@@ -32,7 +32,16 @@ app.use(express.json());
 
 //run when client connects to socket
 io.on('connection', socket => {
-    console.log('New socket connetion')
+    //returns true if connected, and then the unquie connection id 
+    console.log(socket.connected, socket.id)
+
+    socket.emit('message', "Welcome to sh*ts n' giggles!");
+})
+
+io.on('disconnect', () => {
+    //undefined if disconnected
+    console.log(socket.id);
+    
 })
 
 // Serve up static assets (from shop-shop, uncomment if we also need it)
