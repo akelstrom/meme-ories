@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { useDispatch, useSelector } from 'react-redux';
+import React/* , { useEffect } */ from 'react';
+//import { useQuery } from '@apollo/react-hooks';
+//import { useDispatch, useSelector } from 'react-redux';
 //import { SOME ACTION } from '../../utils/actions';
 //import { SOME QUERY } from '../../utils/query';
 // Will we use idbPromise from modules for indexedDB? 
