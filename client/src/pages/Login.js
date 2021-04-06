@@ -11,8 +11,8 @@ const Login = () => {
           <input type="email" name="email"/>
         </div>
         <div className='contact-div'>
-          <label className="contact-label" htmlFor="message">Password:</label><br/>
-          <textarea name="message" rows="5" />
+        <label className="contact-label" htmlFor="password">Password:</label><br/>
+          <input type="password" name="password"/>
         </div>
         <div className='contact-div'>
         <button>Submit</button>
