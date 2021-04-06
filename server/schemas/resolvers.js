@@ -10,9 +10,8 @@ const resolvers = {
             if(context.user) {
                 const userData = await User.findOne({_id: context.user._id})
                 .select("-__v -password")
-                .populate("questions")
-                .populate("answers")
-                .populate("votes");
+                .populate("scores")
+                //username, win/loss data 
                 return userData;
             }
         throw new AuthenticationError('Sorry, you must be logged in to complete this request');

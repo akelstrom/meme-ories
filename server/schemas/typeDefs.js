@@ -28,8 +28,8 @@ type Query {
     me: User
     users: [User]
     user(username: String!): User
-    questions: [Question]
-    answers(username: String!): Answer
+    scores: String
+
 }
 
 type Auth {
