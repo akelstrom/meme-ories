@@ -1,13 +1,32 @@
-import React from 'react';
+import React from 'react'
+
 
 const Signup = () => {
-
-    return (
-        <div>
-            <h1>Signup</h1>
-            <p>This is the signup page</p>
+  return (
+    <section className='signup-page'>
+      <h1 className='contact-header' data-testid="h1tag">Sign up here!</h1>
+      <form id="contact-form">
+        <div className='contact-div'>
+          <label className="contact-label" htmlFor="name">Username:</label><br/>
+          <input type="text" name="name" />
         </div>
-    );
-};
+        <div className='contact-div'>
+          <label className="contact-label" htmlFor="email">Email:</label><br/>
+          <input type="email" name="email"/>
+        </div>
+        <div className='contact-div'>
+          <label className="contact-label" htmlFor="message">Password:</label><br/>
+          <textarea name="message" rows="5" />
+        </div>
+        <div className='contact-div'>
+        <button>Submit</button>
+        </div>
+      </form>
+  
+      
+    </section>
+  )
+}
+
 
 export default Signup;
