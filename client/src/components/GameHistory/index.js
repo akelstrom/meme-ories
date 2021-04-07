@@ -47,6 +47,7 @@ function GameHistory() {
             <h2>Game History:</h2>
             <p>Games Played: 10</p>
             <p>Points Earned: 1,000</p>
+            <p>Funniest Answer: "Funny answer ha ha so funny"</p>
         </div>
     );
 }
