@@ -11,6 +11,7 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import Nav from './components/Nav';
+import GameRules from './components/GameRules';
 import './App.css';
 
 const client = new ApolloClient({
@@ -33,6 +34,7 @@ function App() {
     <ApolloProvider client={client}>
         <Login/>
       <Signup/>
+      <GameRules/>
       <Router>
         <div>
           <Provider store={store}>
