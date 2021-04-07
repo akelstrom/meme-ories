@@ -10,8 +10,8 @@ function Nav() {
             return (
                 <ul>
                     <li>
-                        <Link to="/gameHistory">
-                            Game History
+                        <Link to="/dashboard">
+                            Dashboard
                         </Link>
                     </li>
                     <li>
