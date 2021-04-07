@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
@@ -10,11 +10,13 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
+import Gameboard from './pages/Gameboard';
 import Nav from './components/Nav';
 import './App.css';
 
-// import io from 'socket.io-client';
-// const socket = io();
+//socket
+import io from 'socket.io-client';
+
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -29,7 +31,13 @@ const client = new ApolloClient({
 })
 
 function App() {
-
+  // const socket = io
+  const [socket, setSocket] = useState({});
+  
+  useEffect(() => {
+    setSocket(io("http://localhost:3001/"))
+  },[]);
+  
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -41,6 +49,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path='/dashboard' component={Dashboard} />
+              <Route exact path = '/gameboard' component={Gameboard}/>
               <Route component={NoMatch} />
             </Switch>
           </Provider>

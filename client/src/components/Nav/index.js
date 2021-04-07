@@ -6,7 +6,7 @@ function Nav() {
 
     function showNavigation() {
         // Needs utils/auth.js filled out for this to function
-        if (/* Auth.loggedIn() */false) {
+        if (/* Auth.loggedIn() */true) {
             return (
                 <ul>
                     <li>

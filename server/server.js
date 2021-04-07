@@ -1,20 +1,19 @@
-const express = require('express');
-const { ApolloServer } = require('apollo-server-express');
-const path = require('path');
-const dotenv = require('dotenv');
+const express = require("express");
+const { ApolloServer } = require("apollo-server-express");
+const path = require("path");
+const dotenv = require("dotenv");
 
-const { typeDefs, resolvers } = require('./schemas');
-const { authMiddleware } = require('./utils/auth');
-const db = require('./config/connection');
+const { typeDefs, resolvers } = require("./schemas");
+const { authMiddleware } = require("./utils/auth");
+const db = require("./config/connection");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 //socket io constants
-const socketio = require('socket.io');
-const http = require('http');
-const socketServer = http.createServer(app);
-const io = socketio(socketServer);
+const socketio = require("socket.io");
+const http = require("http");
+// const socketServer = http.createServer(app);
 
 // Uncomment when the schemas are finished
 /* const server = new ApolloServer({
@@ -30,35 +29,35 @@ const io = socketio(socketServer);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-//run when client connects to socket
-io.on('connection', socket => {
-    //returns true if connected, and then the unquie connection id 
-    console.log(socket.connected, socket.id)
-
-    socket.emit('message', "Welcome to sh*ts n' giggles!");
-})
-
-io.on('disconnect', () => {
-    //undefined if disconnected
-    console.log(socket.id);
-    
-})
-
 // Serve up static assets (from shop-shop, uncomment if we also need it)
 //app.use('/images', express.static(path.join(__dirname, '../client/images')));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
 }
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-db.once('open', () => {
-    socketServer.listen(PORT, () => {
-        console.log(`API server running on port ${PORT}!`);
-        // Uncomment when schemas are finished and ApolloServer is connected
-        //console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    });
+db.once("open", () => {
+  const socketServer = app.listen(PORT, () => {
+    console.log(`API server running on port ${PORT}!`);
+    // Uncomment when schemas are finished and ApolloServer is connected
+    //console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+  });
+
+  //socket
+  const io = socketio(socketServer);
+
+  //run when client connects to socket
+  io.on("connection", (socket) => {
+    // socket.on('join')
+    console.log("joined socket");
+  });
+
+  io.on("disconnect", () => {
+    //undefined if disconnected
+    console.log(socket.id);
+  });
 });
