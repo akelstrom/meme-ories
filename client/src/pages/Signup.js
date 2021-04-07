@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Signup = () => {
 const [formState, setFormState] = useState({ email: '', password: '' });
-         const [login, { error }] = useMutation(LOGIN_USER);
+         const [login, { error }] = useMutation(ADD_USER);
        
          // update state based on form input changes
          const handleChange = event => {
