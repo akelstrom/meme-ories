@@ -32,8 +32,7 @@ function App() {
 
     
     <ApolloProvider client={client}>
-        <Login/>
-      <Signup/>
+     
       <GameRules/>
       <Router>
         <div>
