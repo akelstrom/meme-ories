@@ -17,14 +17,18 @@ const resolvers = {
             }
         throw new AuthenticationError('Sorry, you must be logged in to complete this request');
         },
-        //get question by username
-        questions: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Question.find(params).sort({ createdAt: -1 });
-          },
+        // //get question by username
+        // questions: async (parent, { username }) => {
+        //     const params = username ? { username } : {};
+        //     return Question.find(params).sort({ createdAt: -1 });
+        //   },
         //get question by id
-        questions: async (parent, { _id }) => {
+        question: async (parent, { _id }) => {
           return Question.findOne({ _id })
+        },
+        //get all questions
+        questions: async()=> {
+            return Question.find()
         },
         //get all users
         users: async () => {
@@ -38,8 +42,7 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select("-__v -password")
-            .populate("questions")
-            .poulate("answers")
+            .populate("answers")
         }
     },
     Mutation: {
@@ -75,16 +78,16 @@ const resolvers = {
             const question = await Question.create({...args})
             return question;
         },
-        addAnswer: async (parent, { thoughtId, reactionBody }, context) => {
-            if(context.user) {
+        addAnswer: async (parent, { QuestionId, answerBody }, context) => {
+           // if(context.user) {
                 const updatedQuestion = await Question.findOneAndUpdate(
                     { _id: QuestionId },
-                    { $push: { answers: {answerBody, username: context.user.username } } },
+                    { $push: { answers: {answerBody /*,username: context.user.username*/ } } },
                     { new: true, runValidators: true }
                 );
 
                 return updatedQuestion;
-            }
+            //}
 
             throw new AuthenticationError("You must be logged in!")
         }
