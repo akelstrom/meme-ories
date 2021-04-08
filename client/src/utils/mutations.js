@@ -30,9 +30,9 @@ export const ADD_QUESTION = gql`
             answers {
                 _id
                 answerBody
-                createdAt
                 vote
                 username
+                
             }
         }
     }
@@ -42,10 +42,14 @@ export const ADD_ANSWER = gql`
     mutation addAnswer($questionId: ID!, $answerBody: String!) {
         addAnswer(questionId: $questionId, answerBody: $answerBody) {
             _id
-            answerBody
-            createdAt
-            vote
-            username
-        }
+            questionText
+            answers {
+                _id
+                answerBody
+                createdAt
+                vote
+                username
+            }
+        }          
     }
 `;

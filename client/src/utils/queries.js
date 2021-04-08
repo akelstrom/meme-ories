@@ -69,7 +69,6 @@ export const QUERY_QUESTIONS = gql`
             _id
             questionText
             answers {
-                _id
                 answerBody
                 createdAt
                 vote
@@ -82,7 +81,6 @@ export const QUERY_QUESTIONS = gql`
 export const QUERY_ANSWERS = gql`
     query answers($username: String!) {
         answers(username: $username) {
-            _id
             answerBody
             createdAt
             vote

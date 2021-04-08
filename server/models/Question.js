@@ -6,7 +6,7 @@ const questionSchema = new Schema(
   {
     questionText: {
       type: String,
-      required: 'You need to leave a thought!',
+      required: 'You need to leave a question!',
       minlength: 1,
       maxlength: 280
     },
@@ -17,7 +17,7 @@ const questionSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: false
     },
 
     // each question will include an array of answers to that question

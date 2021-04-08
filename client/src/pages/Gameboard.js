@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { QUERY_QUESTIONS } from '../utils/queries';
 
+import AnswerForm from '../components/AnswerForm';
 //eventually import the AnswerList from components
 
 //import Auth from '../utils/auth';
@@ -14,7 +15,7 @@ import { QUERY_QUESTIONS } from '../utils/queries';
 
 const Question = () => {
 
-  
+ 
 
   //This is similar to the query logic that you used on the homepage. The variables loading and data are destructured from the useQuery Hook
   //The loading variable is then used to briefly show a loading <div> element, and the data variable is used to populate a thought object (data.thought)
@@ -22,68 +23,57 @@ const Question = () => {
 
   const { loading, data } =  useQuery(QUERY_QUESTIONS);
 
+  if (loading) {
+    console.log("loading")
+    return <div>Loading...</div>
+  }
   // the data returns an array of questions 
   //console.log(data)
 
   const questionsArray = data?.questions || {};
   console.log(questionsArray)
   console.log("questionArray Length:"+ questionsArray.length)
-  //console.log(questionsArray.length)
-  // we are going to need to use state when we generate a random question to display
-  // the initial state will be the first randomly generated question 
-  // question, setQuestion??
-  //const [questionText, setQuestion] = useState('');
-  // will also need state for the shuffle button to change the state of the indexArray
+  
  let index= 0
  let indexArray = [index]
 
  const createIndexArray =  () => {
      while (indexArray.length < questionsArray.length) {
-         indexArray.push(index=index+1)
+         indexArray.push(index+=1)
      }
  }
 createIndexArray();
 console.log("indexArray:" +indexArray);
 
-// the index array refects the index numbers of the questionsArray
-// on page load, create index array is called 
-// index array is then shuffled and spliced so that we get 5 random non reapeating index numbers that will be used to generate/render the 5 questions 
-
+// on page load, create index array is called and then shuffle is called to create the shuffledIndexArray
+// index array is then shuffled so we get a non reapeating array of index numbers that reflex the index numbers of the questionsArray 
+ 
+let shuffledIndexArray
 function shuffle() {
-    indexArray = indexArray.sort(function(a, b){return 0.5 - Math.random()}).slice(0,4);
-    //console.log(indexArray)
+
+   shuffledIndexArray = indexArray.sort(function(a, b){return 0.5 - Math.random()})
+    
 }
 
 shuffle();
+console.log("shuffled indexArray:" + shuffledIndexArray)
 
-console.log("shuffled indexArray:" + indexArray)
+console.log(questionsArray[shuffledIndexArray[0]].questionText)
+console.log(questionsArray[shuffledIndexArray[1]].questionText)
+console.log(questionsArray[shuffledIndexArray[2]].questionText)
+console.log(questionsArray[shuffledIndexArray[3]].questionText)
 
- let i = 0
- let questionArrayIndex = indexArray[i]
-const handleClick = () =>{
-     console.log("clicked")
 
-     
-  
-   
-
-}
-
-  
-
-  
-
-  if (loading) {
-    return <div>Loading...</div>
-  }
 
 
   return (
 
     <div>
         <div>This is the question on the gameboard page</div>
-        <div>{questionsArray[`${questionArrayIndex}`].questionText}</div>
-        <button onClick= {handleClick}> Generate Question</button>
+        <div>{questionsArray[shuffledIndexArray[0]].questionText}</div>
+        <AnswerForm questionId= {questionsArray[shuffledIndexArray[0]]._id}/>
+        
+       
     </div>
     
     
