@@ -28,7 +28,7 @@ const resolvers = {
         },
         //get all questions
         questions: async()=> {
-            return Question.find()
+            return Question.find().sort({"createdAt": -1})
         },
         //get all users
         users: async () => {

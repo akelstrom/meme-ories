@@ -23,58 +23,25 @@ const Question = () => {
 
   const { loading, data } =  useQuery(QUERY_QUESTIONS);
 
+  const questionsArray = data?.questions || {};
+  console.log(questionsArray)
+  console.log("questionArray Length:"+ questionsArray.length)
+
+  const [questionIndex, setQuestionIndex] = useState(0); 
+
   if (loading) {
     console.log("loading")
     return <div>Loading...</div>
   }
-  // the data returns an array of questions 
-  //console.log(data)
-
-  const questionsArray = data?.questions || {};
-  console.log(questionsArray)
-  console.log("questionArray Length:"+ questionsArray.length)
-  
- let index= 0
- let indexArray = [index]
-
- const createIndexArray =  () => {
-     while (indexArray.length < questionsArray.length) {
-         indexArray.push(index+=1)
-     }
- }
-createIndexArray();
-console.log("indexArray:" +indexArray);
-
-// on page load, create index array is called and then shuffle is called to create the shuffledIndexArray
-// index array is then shuffled so we get a non reapeating array of index numbers that reflex the index numbers of the questionsArray 
- 
-let shuffledIndexArray
-function shuffle() {
-
-   shuffledIndexArray = indexArray.sort(function(a, b){return 0.5 - Math.random()})
-    
-}
-
-shuffle();
-console.log("shuffled indexArray:" + shuffledIndexArray)
-
-console.log(questionsArray[shuffledIndexArray[0]].questionText)
-console.log(questionsArray[shuffledIndexArray[1]].questionText)
-console.log(questionsArray[shuffledIndexArray[2]].questionText)
-console.log(questionsArray[shuffledIndexArray[3]].questionText)
-
-
 
 
   return (
 
-    <div>
-        <div>This is the question on the gameboard page</div>
-        <div>{questionsArray[shuffledIndexArray[0]].questionText}</div>
-        <AnswerForm questionId= {questionsArray[shuffledIndexArray[0]]._id}/>
-        
-       
-    </div>
+  
+  <div>
+    <div>{questionsArray[questionIndex].questionText}</div>
+    <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId= {questionsArray[questionIndex]._id}/> 
+  </div>
     
     
   );

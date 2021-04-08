@@ -68,6 +68,7 @@ export const QUERY_QUESTIONS = gql`
         questions {
             _id
             questionText
+            createdAt
             answers {
                 answerBody
                 createdAt

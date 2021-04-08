@@ -6,6 +6,7 @@ const typeDefs = gql `
 type Question {
     _id: ID
     questionText: String
+    createdAt: String
     answers: [Answer]
 }
 
