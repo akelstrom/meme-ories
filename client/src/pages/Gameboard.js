@@ -9,7 +9,7 @@ import { QUERY_QUESTIONS } from '../utils/queries';
 import AnswerForm from '../components/AnswerForm';
 //eventually import the AnswerList from components
 
-//import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 // eventually import the AnswerForm from components
 
@@ -34,7 +34,7 @@ const Question = () => {
     return <div>Loading...</div>
   }
 
-
+  if (Auth.loggedIn()) {
   return (
 
   
@@ -45,6 +45,7 @@ const Question = () => {
     
     
   );
+  }
 };
 
 export default Question;
