@@ -1,7 +1,7 @@
 import React from 'react';
 import GameHistory from '../components/GameHistory';
 import QuestionForm from '../components/QuestionForm';
-import AnswerForm from '../components/QuestionForm';
+
 
 const Dashboard = () => {
 
