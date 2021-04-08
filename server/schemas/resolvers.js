@@ -78,11 +78,11 @@ const resolvers = {
             const question = await Question.create({...args})
             return question;
         },
-        addAnswer: async (parent, { QuestionId, answerBody }, context) => {
+        addAnswer: async (parent, { questionId, answerBody }, context) => {
            // if(context.user) {
                 const updatedQuestion = await Question.findOneAndUpdate(
-                    { _id: QuestionId },
-                    { $push: { answers: {answerBody /*,username: context.user.username*/ } } },
+                    { _id: questionId },
+                    { $push: { answers: {answerBody: answerBody /*,username: context.user.username*/ } } },
                     { new: true, runValidators: true }
                 );
 
