@@ -14,6 +14,11 @@ function Nav() {
                         </Link>
                     </li>
                     <li>
+                        <Link to='/gameboard'>
+                            Game Board
+                        </Link>
+                    </li>
+                    <li>
                         <a href="/" onClick={() => Auth.logout()}>
                             Logout
                         </a>
@@ -31,11 +36,6 @@ function Nav() {
                     <li>
                         <Link to='/login'>
                             Login
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to='/gameboard'>
-                            GameBoard
                         </Link>
                     </li>
                 </ul>
