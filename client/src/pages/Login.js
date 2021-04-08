@@ -4,11 +4,11 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const Login = props => {
-const [formState, setFormState] = useState({ email: '', password: '' });
-const [login, { error }] = useMutation(LOGIN);
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN);
   
     // update state based on form input changes
-    const handleChange = event => {
+    const handleChange = (event) => {
       const { name, value } = event.target;
   
       setFormState({
@@ -18,7 +18,7 @@ const [login, { error }] = useMutation(LOGIN);
     };
   
     /// submit form
-  const handleFormSubmit = async event => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
   
     try {
@@ -30,40 +30,47 @@ const [login, { error }] = useMutation(LOGIN);
     } catch (e) {
       console.error(e);
     }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
   };
   
-    return (
-        <section className='login-page'>
-        <h1 className='contact-header' data-testid="h1tag">Login here!</h1>
-        <form onSubmit={handleFormSubmit}>
-          <div className='contact-div'>
-            <label className="contact-label" htmlFor="email">Email:</label><br/>
-            <input type="email" 
+  return (
+      <section className='login-page'>
+      <h1 className='contact-header' data-testid="h1tag">Login here!</h1>
+      <form onSubmit={handleFormSubmit}>
+        <div className='contact-div'>
+          <label className="contact-label" htmlFor="email">Email:</label><br/>
+          <input 
+            type="email" 
             name="email"
             placeholder="Your email"
+            id="email"
             value={formState.email}
             onChange={handleChange}
-            />
-          </div>
-          <div className='contact-div'>
-          <label className="contact-label" htmlFor="password">Password:</label><br/>
-            <input 
+          />
+        </div>
+        <div className='contact-div'>
+        <label className="contact-label" htmlFor="password">Password:</label><br/>
+          <input 
             type="password"
             placeholder="******"
-             name="password"
-             value={formState.password}
+            name="password"
+            id="password"
+            value={formState.password}
             onChange={handleChange}
-            />
-          </div>
-          <div className='contact-div'>
-          <button>Submit</button>
-          </div>
-        </form>
-        {error && <div>Login failed</div>}
-        
-      </section>
-    );
-  };
+          />
+        </div>
+        <div className='contact-div'>
+        <button>Submit</button>
+        </div>
+      </form>
+      {error && <div>Login failed</div>}
+    </section>
+  );
+};
   
-  export default Login;
-  
+export default Login;
