@@ -1,7 +1,6 @@
 const { User, Question } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
-//commment in when auth gets done in backend
-// const { signToken } = require("..utils/auth");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
@@ -17,29 +16,29 @@ const resolvers = {
             }
         throw new AuthenticationError('Sorry, you must be logged in to complete this request');
         },
-        //get question by username
-        questions: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Question.find(params).sort({ createdAt: -1 });
-          },
+        // //get question by username
+        // questions: async (parent, { username }) => {
+        //     const params = username ? { username } : {};
+        //     return Question.find(params).sort({ createdAt: -1 });
+        //   },
         //get question by id
-        questions: async (parent, { _id }) => {
+        question: async (parent, { _id }) => {
           return Question.findOne({ _id })
+        },
+        //get all questions
+        questions: async()=> {
+            return Question.find()
         },
         //get all users
         users: async () => {
             return User.find()
               .select("-__v -password")
-              .populate("questions")
-              .populate("answers");
             //   .populate("votes"); --is this something I need to do???? 
           },
         //get a user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select("-__v -password")
-            .populate("questions")
-            .poulate("answers")
         }
     },
     Mutation: {
@@ -66,28 +65,25 @@ const resolvers = {
             return { token, user};
         },
         addQuestion: async(parent, args, context) => {
-            if (context.user) {
-                const thought = await Thought.create({ ...args, username: context.user.username });
-
-                await User.findByIdAndUpdate(
-                    { _id: context.user._id },
-                    { $push: { questions: question._id } },
-                    { new: true }
-                );
+            // if (context.user) {
+            //     const question = await Question.create({ ...args, username: context.user.username });
                 
-                return question;
-            }
+            //     return question;
+            // }
+
+            const question = await Question.create({...args})
+            return question;
         },
-        addAnswer: async (parent, { thoughtId, reactionBody }, context) => {
-            if(context.user) {
+        addAnswer: async (parent, { questionId, answerBody }, context) => {
+           // if(context.user) {
                 const updatedQuestion = await Question.findOneAndUpdate(
-                    { _id: QuestionId },
-                    { $push: { answers: {answerBody, username: context.user.username } } },
+                    { _id: questionId },
+                    { $push: { answers: {answerBody: answerBody /*,username: context.user.username*/ } } },
                     { new: true, runValidators: true }
                 );
 
                 return updatedQuestion;
-            }
+            //}
 
             throw new AuthenticationError("You must be logged in!")
         }

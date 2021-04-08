@@ -8,9 +8,11 @@ import store from './utils/store';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import GameHistory from './pages/GameHistory';
+import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
+import GameBoard from './pages/Gameboard';
 import Nav from './components/Nav';
+import GameRules from './components/GameRules';
 import './App.css';
 
 const client = new ApolloClient({
@@ -28,7 +30,10 @@ const client = new ApolloClient({
 function App() {
 
   return (
+
+    
     <ApolloProvider client={client}>
+      <GameRules/>
       <Router>
         <div>
           <Provider store={store}>
@@ -37,7 +42,8 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path='/gameHistory' component={GameHistory} />
+              <Route exact path='/dashboard' component={Dashboard} />
+              <Route exact path= "/gameboard" component={GameBoard}/>
               <Route component={NoMatch} />
             </Switch>
           </Provider>

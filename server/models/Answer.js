@@ -3,6 +3,10 @@ const { Schema } = require('mongoose');
 
 const answerSchema = new Schema(
   {
+    //answerId: {
+    //   type: Schema.Types.ObjectId,
+    //   default: () => new Types.ObjectId()
+    // },
     answerBody: {
       type: String,
       required: true,
@@ -10,7 +14,7 @@ const answerSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: false
     },
     votes: {
       type: Number

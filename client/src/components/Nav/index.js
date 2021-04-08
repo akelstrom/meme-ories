@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 function Nav() {
 
     function showNavigation() {
-        // Needs utils/auth.js filled out for this to function
-        if (/* Auth.loggedIn() */false) {
+        if (Auth.loggedIn()) {
             return (
                 <ul>
                     <li>
-                        <Link to="/gameHistory">
-                            Game History
+                        <Link to="/dashboard">
+                            Dashboard
                         </Link>
                     </li>
                     <li>
@@ -32,6 +31,11 @@ function Nav() {
                     <li>
                         <Link to='/login'>
                             Login
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/gameboard'>
+                            GameBoard
                         </Link>
                     </li>
                 </ul>
