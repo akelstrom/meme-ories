@@ -32,7 +32,6 @@ function App() {
 
     
     <ApolloProvider client={client}>
-     
       <GameRules/>
       <Router>
         <div>
@@ -49,7 +48,6 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-   
   );
 }
 

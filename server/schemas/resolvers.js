@@ -1,7 +1,7 @@
 const { User, Question } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 //commment in when auth gets done in backend
-// const { signToken } = require("..utils/auth");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
     Query: {
@@ -30,16 +30,12 @@ const resolvers = {
         users: async () => {
             return User.find()
               .select("-__v -password")
-              .populate("questions")
-              .populate("answers");
             //   .populate("votes"); --is this something I need to do???? 
           },
         //get a user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select("-__v -password")
-            .populate("questions")
-            .poulate("answers")
         }
     },
     Mutation: {
