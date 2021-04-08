@@ -1,6 +1,5 @@
 const { User, Question } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
-//commment in when auth gets done in backend
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
