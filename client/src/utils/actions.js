@@ -1,1 +1,2 @@
 export const TOGGLE_RULES = 'TOGGLE_RULES';
+export const UPDATE_POINTS = 'UPDATE_POINTS'; 
