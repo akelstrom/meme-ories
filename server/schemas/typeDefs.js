@@ -21,13 +21,14 @@ type User {
     _id: ID
     username: String
     email: String
-    questions: [Question]
+    
 }
 
 type Query {
     me: User
     users: [User]
     user(username: String!): User
+    question(_id: ID!): Question
     questions: [Question]
     answers(username: String!): Answer
 }
@@ -41,7 +42,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addQuestion(questionText: String): Question
-    addAnswer(questionId: ID!, answerBody: String!): Answer
+    addAnswer(questionId: ID!, answerBody: String!): Question
 }
 `
 

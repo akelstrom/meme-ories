@@ -20,14 +20,25 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    questions: [
-      {
 
-        // Question IDs will be in here as an array, so if we want users to be able to add questions to the game they can
-        type: Schema.Types.ObjectId,
-        ref: 'Question'
-      }
-    ]
+    gamesPlayed: {
+      type: Number,
+      default: 0
+
+    },
+
+    score: {
+      type: Number,
+      default: 0
+    }
+    
+    // questions: [
+    //   {
+    //     // Question IDs will be in here as an array, so if we want users to be able to add questions to the game they can
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Question'
+    //   }
+    // ]
   },
   {
     toJSON: {
