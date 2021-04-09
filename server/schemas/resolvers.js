@@ -65,11 +65,11 @@ const resolvers = {
             return { token, user};
         },
         addQuestion: async(parent, args, context) => {
-            if (context.user) {
-                const question = await Question.create({ ...args, username: context.user.username });
-                
+           // if (context.user) {
+               // const question = await Question.create({ ...args, username: context.user.username });
+                const question = await Question.create({...args})
                 return question;
-            }
+            //}
 
             // const question = await Question.create({...args})
             // return question;
