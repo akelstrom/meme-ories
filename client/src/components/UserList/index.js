@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { Container, Grid } from '@material-ui/core';
-/*DATA*/
-import friendsData from '../../utils/friendsData';
 import UserItem from '../UserItem';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_USERS } from '../../utils/actions';
 import { QUERY_USERS } from '../../utils/queries';
+import { ADD_FRIEND } from '../../utils/mutations';
+
 
 const UserList = () => {
     const dispatch = useDispatch();

@@ -43,7 +43,7 @@ function Leaderboard() {
         return (
             <div>
                 <p>Add some friends and see how you match up!</p>
-                <Link to='/friends'>Add Friends!</Link>
+                <Link to='/addFriends'>Add Friends!</Link>
             </div>
         ) 
     }
