@@ -13,7 +13,7 @@ export const QUERY_ME = gql`
                     _id
                     answerBody
                     createdAt
-                    vote
+                    votes
                     username
                 }
             }
@@ -34,7 +34,7 @@ export const QUERY_USER = gql`
                     _id
                     answerBody
                     createdAt
-                    vote
+                    votes
                     username
                 }
             }
@@ -55,7 +55,7 @@ export const QUERY_USERS = gql`
                     _id
                     answerBody
                     createdAt
-                    vote
+                    votes
                     username
                 }
             }
@@ -73,12 +73,14 @@ export const QUERY_QUESTIONS = gql`
                 _id
                 answerBody
                 createdAt
-                vote
+                votes
                 username
             }
         }
     }
 `;
+
+
 
 
 

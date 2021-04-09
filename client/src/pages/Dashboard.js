@@ -46,8 +46,8 @@ const Dashboard = () => {
   
 
     {/* this is where the Answer component will go... we need to loop throught them*/}
-    <AnswerList answers = {questionsArray[questionIndex].answers} />
-    <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId= {questionsArray[questionIndex]._id}/> 
+    <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id}/>
+    <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
   </div>
     
     

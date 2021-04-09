@@ -47,9 +47,25 @@ export const ADD_ANSWER = gql`
                 _id
                 answerBody
                 createdAt
-                vote
+                votes
                 username
             }
         }          
     }
+`;
+
+export const ADD_VOTE = gql `
+mutation addVote($questionId: ID! ,$answerId: ID!, $voteCount: Int!) {
+    addVote(questionId: $questionId, answerId: $answerId, voteCount: $voteCount){
+        _id
+        questionText
+        answers {
+            _id
+            answerBody
+            createdAt
+            votes
+            username
+        }
+    }
+}
 `;
