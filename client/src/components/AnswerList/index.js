@@ -60,15 +60,15 @@ const AnswerList = ({ answers, questionId }) => {
   return (
     <div>
         <div>
-            <span>Answers:</span>
+            <span>Captions:</span>
         </div>
         <div>
         { answers &&
             answers.map((answer, index) => (
             <p key={index}>
-                {answer.answerBody} {'| '}
+                "{answer.answerBody}" {'| '}
                 posted by: {answer.username} {'|'}
-                answer ID: {answer._id} {'|'}
+                {/*answer ID: {answer._id} {'|'}*/}
                 vote count: {answer.votes} {' | '}
               <button name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>
             </p>

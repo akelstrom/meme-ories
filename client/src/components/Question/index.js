@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 //import { Link } from 'react-router-dom';
 
   //Here we instruct that the ThoughtList component will receive two props: a title and the thoughts array being render from the profile component in Profile.js and also from the hompage component (the props mean different things depending on where the thoughlist is being rendered)... 
@@ -15,7 +16,8 @@ const Question = ({ questionText, question, questionIndex, setQuestionIndex }) =
 
     return (
         <div>
-            <h3>{questionText} THIS WILL BE THE MEME INSTEAD OF QUESTION</h3>
+            <h3> <img width="40%"
+             height="auto" src={require(`../../images/${questionText}.jpg`).default} alt="meme"/></h3>
             
         </div>
     );
