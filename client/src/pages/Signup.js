@@ -76,7 +76,7 @@ const Signup = () => {
         <button>Submit</button>
       </div>
     </form>
-    {error && <div>Sig up failed</div>}
+    {error && <div>Sign up failed</div>}
   </section>
   );
 };
