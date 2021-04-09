@@ -6,7 +6,7 @@ import React/* , { useEffect } */ from 'react';
 // Will we use idbPromise from modules for indexedDB? 
 //import { idbPromise } from '../../utils/helpers';
 
-function GameHistory() {
+function Leaderboard() {
     // variables for Redux State, will probably need to adjust later but this is a good baseline
     //const dispatch = useDispatch();
     //const gameHistoryState = useSelector(state => state.gameHistory);
@@ -44,12 +44,10 @@ function GameHistory() {
 
     return (
         <div>
-            <h2>Game History:</h2>
-            <p>Games Played: 10</p>
-            <p>Points Earned: 1,000</p>
-            <p>Funniest Answer: "Funny answer ha ha so funny"</p>
+            <h2>🤡 Leaderboard:</h2>
+            <p>FRIEND has X laughs</p>
         </div>
     );
 }
 
-export default GameHistory;
+export default Leaderboard;

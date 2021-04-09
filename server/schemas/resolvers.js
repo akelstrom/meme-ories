@@ -23,7 +23,7 @@ const resolvers = {
         //   },
         //get question by id
         question: async (parent, { _id }) => {
-          return Question.findOne({ _id })
+            return Question.findOne({ _id })
         },
         //get all questions
         questions: async()=> {
@@ -32,9 +32,9 @@ const resolvers = {
         //get all users
         users: async () => {
             return User.find()
-              .select("-__v -password")
+            .select("-__v -password")
             //   .populate("votes"); --is this something I need to do???? 
-          },
+        },
         //get a user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
@@ -100,7 +100,7 @@ const resolvers = {
 
             throw new AuthenticationError('You must be logged in to do this!')
         }
-     }
+    }
 }
 
 module.exports = resolvers;

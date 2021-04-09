@@ -6,16 +6,11 @@ export const QUERY_ME = gql`
             _id
             username
             email
-            questions {
+            friendCount
+            friends {
                 _id
-                questionText
-                answers {
-                    _id
-                    answerBody
-                    createdAt
-                    vote
-                    username
-                }
+                username
+                friendCount
             }
         }
     }
@@ -27,16 +22,11 @@ export const QUERY_USER = gql`
             _id
             username
             email
-            questions {
+            friendCount
+            friends {
                 _id
-                questionText
-                answers {
-                    _id
-                    answerBody
-                    createdAt
-                    vote
-                    username
-                }
+                username
+                friendCount
             }
         }
     }
@@ -47,17 +37,11 @@ export const QUERY_USERS = gql`
         users {
             _id
             username
-            email
-            questions {
+            friendCount
+            friends {
                 _id
-                questionText
-                answers {
-                    _id
-                    answerBody
-                    createdAt
-                    vote
-                    username
-                }
+                username
+                friendCount
             }
         }
     }

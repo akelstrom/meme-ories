@@ -15,6 +15,8 @@ import AnswerForm from '../components/AnswerForm';
 
 // eventually import the AnswerForm from components
 
+import Leaderboard from '../components/Leaderboard';
+
 const Dashboard = () => {
 
  
@@ -39,14 +41,12 @@ const Dashboard = () => {
 
   return (
 
-  
   <div>
     <QuestionForm />
     <div>{questionsArray[questionIndex].questionText}</div>
     <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId= {questionsArray[questionIndex]._id}/> 
+    <Leaderboard />
   </div>
-    
-    
   );
 };
 
