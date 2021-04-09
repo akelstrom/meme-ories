@@ -14,7 +14,7 @@ type Answer {
     _id: ID
     answerBody: String
     createdAt: String
-    vote: Int 
+    votes: Int 
     username: String
 }
 
