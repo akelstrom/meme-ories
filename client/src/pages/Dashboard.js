@@ -43,7 +43,7 @@ const Dashboard = () => {
 const handleClick = () => {
 
   
-  if (questionIndex < questionsArray.length -1){
+  if (questionIndex < 12){
     setQuestionIndex(questionIndex + 1)
   } else {
     setQuestionIndex(0)

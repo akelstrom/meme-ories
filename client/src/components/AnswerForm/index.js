@@ -53,7 +53,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
       
       <form onSubmit={handleFormSubmit}>
         <textarea
-          placeholder="Enter your answer..."
+          placeholder="Enter your caption..."
           value= {answerBody}
           onChange={handleChange}
         ></textarea>
