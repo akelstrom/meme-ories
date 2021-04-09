@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
-import GameBoard from './pages/Gameboard';
 import Nav from './components/Nav';
 import GameRules from './components/GameRules';
 import './App.css';
@@ -43,7 +42,6 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path='/dashboard' component={Dashboard} />
-              <Route exact path= "/gameboard" component={GameBoard}/>
               <Route component={NoMatch} />
             </Switch>
           </Provider>

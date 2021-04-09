@@ -20,7 +20,7 @@ const QuestionForm = () => {
     };
 
     const handleFormSubmit = async event => {
-        event.preventDefault();
+        //event.preventDefault();
         if(!questionText) {
           alert('you must provide an answer!')
         }
