@@ -22,6 +22,8 @@ type User {
     _id: ID
     username: String
     email: String
+    friendCount: Int
+    friends: [User]
     
 }
 
@@ -44,6 +46,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addQuestion(questionText: String): Question
     addAnswer(questionId: ID!, answerBody: String!): Question
+    addFriend(friendId: ID!): User
 }
 `
 
