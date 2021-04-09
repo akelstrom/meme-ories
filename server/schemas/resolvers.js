@@ -89,7 +89,7 @@ const resolvers = {
         },
         addVote: async (parent, { questionId ,answerId, voteCount }, context) => {
 
-            //if(context.user) {
+            if(context.user) {
 
                 const question = await Question.findOne({_id: questionId})
                 let answerArray = question.answers
@@ -115,7 +115,7 @@ const resolvers = {
                 );
 
                 return updatedQuestion;
-            //}
+            }
 
             throw new AuthenticationError("You must be logged in!")
         },

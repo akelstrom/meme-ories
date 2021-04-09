@@ -32,22 +32,38 @@ const Dashboard = () => {
 
   const [questionIndex, setQuestionIndex] = useState(0); 
 
+  const question = questionsArray[questionIndex]
+
   if (loading) {
     console.log("loading")
     return <div>Loading...</div>
   }
 
+  
+const handleClick = () => {
+
+  
+  if (questionIndex < questionsArray.length -1){
+    setQuestionIndex(questionIndex + 1)
+  } else {
+    setQuestionIndex(0)
+  }
+
+}
+  
 
   return (
 
   
   <div>
-    <Question question = {questionsArray[questionIndex].questionText}/>
+    <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
   
 
     {/* this is where the Answer component will go... we need to loop throught them*/}
-    <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id}/>
+    <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
     <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
+    <button value = "Next" onClick = {handleClick}>Next Meme</button>
+    
   </div>
     
     
