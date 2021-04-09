@@ -47,14 +47,14 @@ function Leaderboard() {
             </div>
         ) 
     }
-    
+
     return (
         <div>
             <h2>🤡 Leaderboard:</h2>
             {friendsState.map(friend => (
                 <LeaderboardItem key={friend._id} friend={friend} />
             ))}
-            <Link to='/friends'>Find More Friends!</Link>
+            <Link to='/addFriends'>Find More Friends!</Link>
         </div>
     );
 }

@@ -10,7 +10,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
-import Friends from './pages/Friends';
+import AddFriends from './pages/AddFriends';
 import Nav from './components/Nav';
 import GameRules from './components/GameRules';
 import './App.css';
@@ -44,7 +44,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path='/dashboard' component={Dashboard} />
-              <Route exact path='/friends' component={Friends} />
+              <Route exact path='/addFriends' component={AddFriends} />
               <Route component={NoMatch} />
             </Switch>
           </Provider>

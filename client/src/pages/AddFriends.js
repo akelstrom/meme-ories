@@ -8,7 +8,7 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import FaceIcon from '@material-ui/icons/Face';
 import UserList from '../components/UserList';
 
-const Friends = () => {
+const AddFriends = () => {
     return (
       <div>
         <UserList />
@@ -16,4 +16,4 @@ const Friends = () => {
     )
 }
 
-export default Friends;
+export default AddFriends;
