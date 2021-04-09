@@ -30,7 +30,7 @@ export const ADD_QUESTION = gql`
             answers {
                 _id
                 answerBody
-                vote
+                votes
                 username
                 
             }
