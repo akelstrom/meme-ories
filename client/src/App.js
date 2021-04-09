@@ -10,6 +10,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
+import Friends from './pages/Friends';
 import Nav from './components/Nav';
 import GameRules from './components/GameRules';
 import './App.css';
@@ -32,6 +33,7 @@ function App() {
 
     
     <ApolloProvider client={client}>
+      <Friends/>
       <GameRules/>
       <Router>
         <div>
