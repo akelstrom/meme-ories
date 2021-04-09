@@ -11,7 +11,8 @@ const resolvers = {
                 .select("-__v -password")
                 .populate("questions")
                 .populate("answers")
-                .populate("votes");
+                .populate("votes")
+                .populate("friends");
                 return userData;
             }
         throw new AuthenticationError('Sorry, you must be logged in to complete this request');
@@ -33,12 +34,14 @@ const resolvers = {
         users: async () => {
             return User.find()
             .select("-__v -password")
+            .populate("friends");
             //   .populate("votes"); --is this something I need to do???? 
         },
         //get a user by username
         user: async (parent, { username }) => {
             return User.findOne({ username })
             .select("-__v -password")
+            .populate("friends");
         }
     },
     Mutation: {
