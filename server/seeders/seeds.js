@@ -38,8 +38,8 @@ db.once('open', async () => {
 let createdQuestions = [];
 
   for (let i = 0; i < 14; i += 1) {
-    const questionText = (Math.floor(Math.random() * 14) + 1);
-
+    //const questionText = (Math.floor(Math.random() * 14) + 1);
+    const questionText = i
     // const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     // const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
