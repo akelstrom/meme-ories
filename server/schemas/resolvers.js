@@ -65,15 +65,18 @@ const resolvers = {
             return { token, user};
         },
         addQuestion: async(parent, args, context) => {
-            if (context.user) {
-                const question = await Question.create({ ...args, username: context.user.username });
+            // if (context.user) {
+                // const question = await Question.create({ ...args, username: context.user.username });
                 
-                return question;
-            }
+                // return question;
+
+                const question = await Question.create( {...args} )
+                return question
+            },
 
             // const question = await Question.create({...args})
             // return question;
-        },
+       
         addAnswer: async (parent, { questionId, answerBody }, context) => {
             if(context.user) {
                 const updatedQuestion = await Question.findOneAndUpdate(
@@ -132,7 +135,8 @@ const resolvers = {
 
             throw new AuthenticationError('You must be logged in to do this!')
         }
-     }
+    }
 }
+
 
 module.exports = resolvers;
