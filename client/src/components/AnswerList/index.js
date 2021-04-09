@@ -3,8 +3,8 @@
 // vote component should be displayed on the answerlist component 
 
 
-import React, { useState }from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+//import { Link } from 'react-router-dom';
 import {useMutation} from '@apollo/react-hooks';
 import { ADD_VOTE } from '../../utils/mutations';
 
@@ -18,7 +18,7 @@ const AnswerList = ({ answers, questionId }) => {
   const [addVote, {error}] = useMutation(ADD_VOTE);
 
   const handleClick =  event => {
-    console.log("clicked")
+    //console.log("clicked")
     const answerId = event.target.value 
     let voteCount
     
@@ -31,17 +31,6 @@ const AnswerList = ({ answers, questionId }) => {
       } else {
          voteCount = parseInt
         (event.target.name) +1
-
-      //   try { 
-      //     await addVote ({
-      //        variables: { questionId, answerId, voteCount }
-      //    });
-  
-      //    //setBody('')
-     
-      //  } catch(e) {
-      //    console.error(e);
-      //  }
       }
       try { 
         await addVote ({
@@ -52,6 +41,7 @@ const AnswerList = ({ answers, questionId }) => {
    
      } catch(e) {
        console.error(e);
+       console.log(error)
      }
       
       console.log("current vote count:" + voteCount)
