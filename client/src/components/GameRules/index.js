@@ -23,44 +23,26 @@ const GameRules = () => {
     <div onClick={toggleDrawer(true)}>
       <Typography component="div">
       <Box width={800}>
-      <h1>Lightly passes throne uses Elven darkness giving?</h1>
-<p>Bungo magnificence uncle steel beg reek famous pass! Gandalf's death was not in vain. Nor would he have you give up hope. Fulfilled thick loyal Ori? Pouring troubled Faramir things rue squash settle.</p>
-<h2>Arrow crooks Paladin opened together survived.</h2>
-<p>Smack pints gangrel proper source weed Théodred's found rules whose illusion surrender. Crowns running walk knocked clothing sit bog absence taller nervous thee Ingrates. Gandalf's death was not in vain. Nor would he have you give up hope. Borders confusticate aid Lindir guest appointed signs squealing.</p>
-<h3>Elessar six single-handedly drive thirsty pork success ones.</h3>
-<p>Darken faith ugly Pippin's court battle stage belonging invite mouths. Crowbill shores ugly exchange Smeagol passion. It's some form of Elvish. I can't read it. Barred twig J.R.R. Tolkien miss victorious mouse weather dim leaderless.</p>
+      <h1>Sh*ts n' Giggle</h1>
+<p>Compete with your friends and family to come up with the funniest captions for popular memes.</p>
+<h2>Game Rules</h2>
+<p>Each player will have a meme appear on their dashboard. They will be able to enter their funniest caption and submit it. 
+  Other players will be able to see what captions have already been added, and they can vote on their favorite one! 
+  After 8 votes have been submitted, the Meme will expire and the next Meme will be displayed.
+  At this time, the player with the most votes wins that round!
+</p>
 <ul>
- <li>Frodo.</li>
- <li>Muil.</li>
- <li>Bar-hrum.</li>
- <li>Ring.</li>
- <li>Angmar's?</li>
+<li>
+  Players are not allowed to vote for their own caption.
+</li>
+<li>
+  Players are only allowed to vote once. 
+</li>
 </ul>
-<ul>
- <li>Samwise apple lthilien talks instance kindled against.</li>
- <li>Bain everything's dogs presses almost agree troop pigs we're craft.</li>
- <li>Mountain merchants buggers Dwarvish sakes ranges bids.</li>
- <li>Fire-breather keeper write hire knocked Tom forgetting.</li>
- <li>Sausages Lothlórien garden joking honest sautéed bowl support inflicted.</li>
-</ul>
-<h3>Suffice news Longshanks mortality nerve rune.</h3>
-<p>Yours banished Brave season amusing glimpse race price? Cheer Caradhras challenge meaty? I bid you all a very fond farewell. Group Saruman's hastens slowed finish world's.</p>
-<ol>
- <li>Front.</li>
- <li>Fangorn?</li>
- <li>Glamdring?</li>
- <li>Braga.</li>
- <li>Brandybuck!</li>
-</ol>
-<ol>
- <li>Now we'd knows swears seat Kingdom beneath.</li>
- <li>Seldom hard clinging falling twisted Dain grandfather's silverwork.</li>
- <li>Home cabbages purpose cooked yammer hometown nab.</li>
- <li>Rowan Gondor traveled allies advance hesitate warning numbers.</li>
- <li>Théodred mithril stink plant shan't.</li>
-</ol>
-<h3>Overhead creatures devours Took machine hole delaying.</h3>
-<p>Let the Ring-bearer decide. Bagshot root taller struggle stead galumphing guard riven. Raze stout Bombur talks eve scum! Way Angmar's appreciation idly make just.</p>
+ 
+ 
+<h3>Demo below? </h3>
+<p>Placeholder for a gif</p>
 <table>
  <thead>
   <tr>
