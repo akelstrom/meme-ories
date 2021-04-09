@@ -87,6 +87,19 @@ const resolvers = {
 
             throw new AuthenticationError("You must be logged in!")
         },
+        // addVote: async (parent, { questionId ,answerId, voteCount }, context) => {
+        //     if(context.user) {
+        //         const updatedQuestion = await Question.findOneAndUpdate(
+        //             { _id: questionId},
+        //             { $push: { {answers._id: answerId}: {vote: voteCount } } },
+        //             { new: true, runValidators: true }
+        //         );
+
+        //         return updatedQuestion;
+        //     }
+
+        //     throw new AuthenticationError("You must be logged in!")
+        // },
         addFriend: async (parent, { friendId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(

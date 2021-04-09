@@ -70,6 +70,7 @@ export const QUERY_QUESTIONS = gql`
             questionText
             createdAt
             answers {
+                _id
                 answerBody
                 createdAt
                 vote
@@ -79,13 +80,5 @@ export const QUERY_QUESTIONS = gql`
     }
 `;
 
-export const QUERY_ANSWERS = gql`
-    query answers($username: String!) {
-        answers(username: $username) {
-            answerBody
-            createdAt
-            vote
-            username
-        }
-    }
-`;
+
+

@@ -6,10 +6,11 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { QUERY_QUESTIONS } from '../utils/queries';
 
-import QuestionForm from '../components/QuestionForm';
+import Question from '../components/Question';
 
 import AnswerForm from '../components/AnswerForm';
-//eventually import the AnswerList from components
+
+import AnswerList from '../components/AnswerList';
 
 //import Auth from '../utils/auth';
 
@@ -41,8 +42,11 @@ const Dashboard = () => {
 
   
   <div>
-    <QuestionForm />
-    <div>{questionsArray[questionIndex].questionText}</div>
+    <Question question = {questionsArray[questionIndex].questionText}/>
+  
+
+    {/* this is where the Answer component will go... we need to loop throught them*/}
+    <AnswerList answers = {questionsArray[questionIndex].answers} />
     <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId= {questionsArray[questionIndex]._id}/> 
   </div>
     

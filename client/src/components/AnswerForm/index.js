@@ -39,11 +39,11 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
 
         // set it to less than 4 so user is only answering 5 questions
         
-        if (questionIndex < 4) {
-          setQuestionIndex(questionIndex+=1)
-        } else {
-          alert("you have answered all the questions")
-        }
+        // if (questionIndex < 4) {
+        //   setQuestionIndex(questionIndex+=1)
+        // } else {
+        //   alert("you have answered all the questions")
+        // }
         
         
     };

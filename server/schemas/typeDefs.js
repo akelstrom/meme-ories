@@ -33,7 +33,7 @@ type Query {
     user(username: String!): User
     question(_id: ID!): Question
     questions: [Question]
-    answers(username: String!): Answer
+    
 }
 
 type Auth {
@@ -47,6 +47,8 @@ type Mutation {
     addQuestion(questionText: String): Question
     addAnswer(questionId: ID!, answerBody: String!): Question
     addFriend(friendId: ID!): User
+    addVote(questionId: ID!, answerId: ID!, voteCount: Int!): Question
+    
 }
 `
 
