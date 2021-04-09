@@ -7,7 +7,7 @@ import React from 'react';
 //import { Link } from 'react-router-dom';
 import {useMutation} from '@apollo/react-hooks';
 import { ADD_VOTE } from '../../utils/mutations';
-
+import { BiLike } from "react-icons/bi";
 
 //The AnswerList component will be given the answer array as a prop being passed from dashboard question  ... This array can then be mapped into a list of <p> elements. Each answer also includes the username and vote component. Should we allow a click on usernae to go to the user's profile page?? 
 
@@ -70,7 +70,7 @@ const AnswerList = ({ answers, questionId }) => {
                 posted by: {answer.username} {'|'}
                 answer ID: {answer._id} {'|'}
                 vote count: {answer.votes} {' | '}
-                <button name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>
+              <button name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>
             </p>
             ))}
         </div>
