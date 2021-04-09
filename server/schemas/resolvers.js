@@ -87,19 +87,38 @@ const resolvers = {
 
             throw new AuthenticationError("You must be logged in!")
         },
-        // addVote: async (parent, { questionId ,answerId, voteCount }, context) => {
-        //     if(context.user) {
-        //         const updatedQuestion = await Question.findOneAndUpdate(
-        //             { _id: questionId},
-        //             { $push: { {answers._id: answerId}: {vote: voteCount } } },
-        //             { new: true, runValidators: true }
-        //         );
+        addVote: async (parent, { questionId ,answerId, voteCount }, context) => {
 
-        //         return updatedQuestion;
-        //     }
+            //if(context.user) {
 
-        //     throw new AuthenticationError("You must be logged in!")
-        // },
+                const question = await Question.findOne({_id: questionId})
+                let answerArray = question.answers
+                console.log(answerArray)
+
+                function UpdateArray(answerId, voteCount){    
+                    for (var i = 0; i < answerArray.length; i++) {
+                        if (answerArray[i]._id == answerId) {
+                            answerArray[i].votes = voteCount 
+                            break;
+                        }
+                    }
+                }
+
+                UpdateArray(answerId, voteCount);
+                //console.log(answerArray)
+
+           
+                const updatedQuestion = await Question.findOneAndUpdate(
+                    { _id: questionId},
+                    { answers: answerArray },
+                    { new: true, runValidators: true }
+                );
+
+                return updatedQuestion;
+            //}
+
+            throw new AuthenticationError("You must be logged in!")
+        },
         addFriend: async (parent, { friendId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
