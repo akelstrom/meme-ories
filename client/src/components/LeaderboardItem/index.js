@@ -1,10 +1,10 @@
 import React from 'react';
 
-const LeaderboardItem = () => {
+const LeaderboardItem = ({ friend }) => {
 
     return (
         <div>
-            <p>FRIEND has X laughs</p>
+            <p>{friend.username} has X laughs</p>
         </div>
     );
 };
