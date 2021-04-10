@@ -70,7 +70,7 @@ const AnswerList = ({ answers, questionId }) => {
                 posted by: {answer.username} {'|'}
                 {/*answer ID: {answer._id} {'|'}*/}
                 vote count: {answer.votes} {' | '}
-              <button name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>
+              <button name={answer.votes} value={answer._id} onClick={handleClick}> <BiLike/> add vote</button>
             </p>
             ))}
         </div>
