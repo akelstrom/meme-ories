@@ -1,7 +1,7 @@
 const { User, Question } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
-const { QuestionAnswerSharp } = require("@material-ui/icons");
+
 
 const resolvers = {
     Query: {
