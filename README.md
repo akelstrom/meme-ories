@@ -41,5 +41,5 @@ Name | GitHub | Email
 ---- | ------ | -----
 Alexandra Kelstrom | https://github.com/akelstrom | akelstrom@gmail.com
 Stefanie Tinsley |https://github.com/stefaniepires | stefaniectinsley@gmail.com
-Kristy Zurmuhlen |https://github.com/Kristy-coding| kristy's email here
+Kristy Zurmuhlen |https://github.com/Kristy-coding| kristyzurmuhlen@gmail.com
 Joshua Beedle |https://github.com/jbeedle19 | josh.beedle@gmail.com

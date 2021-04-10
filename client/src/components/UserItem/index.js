@@ -19,15 +19,6 @@ const UserItem = ({ user }) => {
     const [addFriend] = useMutation(ADD_FRIEND);
     const friendedUser = friendsState.find((friend) => friend._id === id);
 
-    /* const checkFriendStatus = () => {
-
-        if (friendedUser) {
-            return <p>Already Friends</p>
-        } else {
-            return <Button onClick={handleClick}>Add Friend <PersonAddIcon/></Button>
-        }
-    } */
-
     const handleClick = async () => {
         try {
             await addFriend({
