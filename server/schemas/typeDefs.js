@@ -22,6 +22,7 @@ type User {
     _id: ID
     username: String
     email: String
+    score: Int
     friendCount: Int
     friends: [User]
     
@@ -48,6 +49,7 @@ type Mutation {
     addAnswer(questionId: ID!, answerBody: String!): Question
     addFriend(friendId: ID!): User
     addVote(questionId: ID!, answerId: ID!, voteCount: Int!): Question
+    addScore (username: String!): User
     
 }
 `

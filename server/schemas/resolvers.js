@@ -2,6 +2,7 @@ const { User, Question } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
+
 const resolvers = {
     Query: {
         //me method
@@ -125,6 +126,78 @@ const resolvers = {
 
             throw new AuthenticationError("You must be logged in!")
         },
+    // add score for each user and put it on the usermodel (via findOne and update)
+    // query all questions in database (13 memes)
+    // map through questions
+    // for each question filter the question.answer array 
+    // for each answer in the array return a new array of answers where username =  context.user.username 
+     addScore: async (parent, {username}, context) => {
+
+        // //if(context.user) {
+
+        //  const questionsArray = await Question.find()
+
+        //  console.log(questionsArray)
+
+        //     let userAnswersArray
+
+        //     let i
+        //     for (i=0; i<questionsArray.length; i++) {
+
+        //         //console.log(questionsArray[i].answers)
+
+        //          userAnswersArray = questionsArray[i].answers.filter(answer => {
+        //             if(answer.username && answer.username === "Kristina") {
+        //                 //console.log(answer)
+        //                 return answer
+        //             }
+        //             return
+        //         })
+        //     }
+        //     console.log(userAnswersArray)
+        //     //console.log(userAnswersArray[0].votes)
+        //     let score = 0
+            
+        //      function sum () {
+                
+        //         let index
+        //         for (index=0; index<userAnswersArray.length; index++) {
+        //               score += userAnswersArray[index].votes
+        //               console.log(userAnswersArray[index].votes)
+        //         }
+
+                
+   
+        //     }
+        //     sum();
+            //console.log(updatedScore)
+            //console.log(score)
+
+            const updatedUser = await User.findOneAndUpdate(
+                { username: username},
+                { $inc: {score: 1}},
+                { new: true, runValidators: true }
+            );
+
+            return updatedUser;
+            
+            // then find a user by username enterd in props and update score to = score 
+            // const updatedUser = await User.findOneAndUpdate(
+            //     { username: username},
+            //     { score: score},
+            //     { new: true, runValidators: true }
+            // );
+
+            // return updatedUser;
+
+
+
+        //}
+
+         //throw new AuthenticationError("You must be logged in!")
+     },
+
+
         addFriend: async (parent, { friendId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(

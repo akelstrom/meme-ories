@@ -70,6 +70,16 @@ export const ADD_VOTE = gql `
     }
 `;
 
+export const ADD_SCORE = gql`
+    mutation addScore ($username: String!) {
+        addScore(username: $username) {
+                _id
+                username
+                score
+        }
+    }
+`;
+
 export const ADD_FRIEND = gql`
     mutation addFriend($id: ID!) {
         addFriend(friendId: $id) {
