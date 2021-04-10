@@ -37,8 +37,8 @@ db.once('open', async () => {
   // create questions (memes)
 let createdQuestions = [];
 
-  for (let i = 0; i < 14; i += 1) {
-    const questionText = (Math.floor(Math.random() * 14) + 1);
+  for (let i = 0; i < 13; i += 1) {
+    const questionText = (Math.floor(Math.random() * 13) + 1);
 
     // const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     // const { username, _id: userId } = createdUsers.ops[randomUserIndex];
