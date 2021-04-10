@@ -37,18 +37,10 @@ db.once('open', async () => {
   // create questions (memes)
 let createdQuestions = [];
 
-  for (let i = 0; i < 13; i += 1) {
-    const questionText = (Math.floor(Math.random() * 13) + 1);
-
-    // const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    // const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+  for (let i = 0; i < 12; i++) {
+    const questionText = i
 
     const createdQuestion = await Question.create({ questionText });
-
-    // const updatedUser = await User.updateOne(
-    //   { _id: userId },
-    //   { $push: { thoughts: createdThought._id } }
-    // );
 
     createdQuestions.push(createdQuestion);
   }
