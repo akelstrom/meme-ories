@@ -6,6 +6,7 @@ const typeDefs = gql `
 type Question {
     _id: ID
     questionText: String
+    createdAt: String
     answers: [Answer]
 }
 
@@ -13,7 +14,7 @@ type Answer {
     _id: ID
     answerBody: String
     createdAt: String
-    vote: Int 
+    votes: Int 
     username: String
 }
 
@@ -21,6 +22,8 @@ type User {
     _id: ID
     username: String
     email: String
+    friendCount: Int
+    friends: [User]
     
 }
 
@@ -30,7 +33,7 @@ type Query {
     user(username: String!): User
     question(_id: ID!): Question
     questions: [Question]
-    answers(username: String!): Answer
+    
 }
 
 type Auth {
@@ -43,6 +46,9 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addQuestion(questionText: String): Question
     addAnswer(questionId: ID!, answerBody: String!): Question
+    addFriend(friendId: ID!): User
+    addVote(questionId: ID!, answerId: ID!, voteCount: Int!): Question
+    
 }
 `
 

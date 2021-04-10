@@ -20,25 +20,12 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-
-    gamesPlayed: {
-      type: Number,
-      default: 0
-
-    },
-
-    score: {
-      type: Number,
-      default: 0
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
-    
-    // questions: [
-    //   {
-    //     // Question IDs will be in here as an array, so if we want users to be able to add questions to the game they can
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Question'
-    //   }
-    // ]
+  ]
   },
   {
     toJSON: {
@@ -66,6 +53,9 @@ userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+})
 
 const User = model('User', userSchema);
 

@@ -6,16 +6,11 @@ export const QUERY_ME = gql`
             _id
             username
             email
-            questions {
+            friendCount
+            friends {
                 _id
-                questionText
-                answers {
-                    _id
-                    answerBody
-                    createdAt
-                    vote
-                    username
-                }
+                username
+                friendCount
             }
         }
     }
@@ -34,9 +29,15 @@ export const QUERY_USER = gql`
                     _id
                     answerBody
                     createdAt
-                    vote
+                    votes
                     username
                 }
+            }
+            friendCount
+            friends {
+                _id
+                username
+                friendCount
             }
         }
     }
@@ -48,16 +49,11 @@ export const QUERY_USERS = gql`
             _id
             username
             email
-            questions {
+            friendCount
+            friends {
                 _id
-                questionText
-                answers {
-                    _id
-                    answerBody
-                    createdAt
-                    vote
-                    username
-                }
+                username
+                friendCount
             }
         }
     }
@@ -68,23 +64,14 @@ export const QUERY_QUESTIONS = gql`
         questions {
             _id
             questionText
+            createdAt
             answers {
+                _id
                 answerBody
                 createdAt
-                vote
+                votes
                 username
             }
-        }
-    }
-`;
-
-export const QUERY_ANSWERS = gql`
-    query answers($username: String!) {
-        answers(username: $username) {
-            answerBody
-            createdAt
-            vote
-            username
         }
     }
 `;

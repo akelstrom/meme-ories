@@ -33,11 +33,6 @@ function Nav() {
                             Login
                         </Link>
                     </li>
-                    <li>
-                        <Link to='/gameboard'>
-                            GameBoard
-                        </Link>
-                    </li>
                 </ul>
             );
         }
