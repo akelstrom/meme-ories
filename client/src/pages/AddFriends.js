@@ -7,10 +7,12 @@ import friendsData from '../utils/friendsData';
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import FaceIcon from '@material-ui/icons/Face';
 import UserList from '../components/UserList';
+import Search from '../components/Search';
 
 const AddFriends = () => {
     return (
       <div>
+        <Search/>
         <UserList />
       </div>
     )
