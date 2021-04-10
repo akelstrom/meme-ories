@@ -55,17 +55,31 @@ export const ADD_ANSWER = gql`
 `;
 
 export const ADD_VOTE = gql `
-mutation addVote($questionId: ID! ,$answerId: ID!, $voteCount: Int!) {
-    addVote(questionId: $questionId, answerId: $answerId, voteCount: $voteCount){
-        _id
-        questionText
-        answers {
+    mutation addVote($questionId: ID! ,$answerId: ID!, $voteCount: Int!) {
+        addVote(questionId: $questionId, answerId: $answerId, voteCount: $voteCount){
             _id
-            answerBody
-            createdAt
-            votes
-            username
+            questionText
+            answers {
+                _id
+                answerBody
+                createdAt
+                votes
+                username
+            }
         }
     }
-}
+`;
+
+export const ADD_FRIEND = gql`
+    mutation addFriend($id: ID!) {
+        addFriend(friendId: $id) {
+            _id
+            username
+            friendCount
+            friends {
+                _id
+                username
+            }
+        }
+    }
 `;

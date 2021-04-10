@@ -16,6 +16,8 @@ import AnswerList from '../components/AnswerList';
 
 // eventually import the AnswerForm from components
 
+import Leaderboard from '../components/Leaderboard';
+
 const Dashboard = () => {
 
  
@@ -54,7 +56,6 @@ const handleClick = () => {
 
   return (
 
-  
   <div>
     <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
   
@@ -63,10 +64,8 @@ const handleClick = () => {
     <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
     <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
     <button value = "Next" onClick = {handleClick}>Next Meme</button>
-    
+    <Leaderboard />
   </div>
-    
-    
   );
 };
 

@@ -17,6 +17,12 @@ export const QUERY_ME = gql`
                     username
                 }
             }
+            friendCount
+            friends {
+                _id
+                username
+                friendCount
+            }
         }
     }
 `;
@@ -37,6 +43,12 @@ export const QUERY_USER = gql`
                     votes
                     username
                 }
+            }
+            friendCount
+            friends {
+                _id
+                username
+                friendCount
             }
         }
     }
@@ -59,6 +71,12 @@ export const QUERY_USERS = gql`
                     username
                 }
             }
+            friendCount
+            friends {
+                _id
+                username
+                friendCount
+            }
         }
     }
 `;
@@ -79,8 +97,3 @@ export const QUERY_QUESTIONS = gql`
         }
     }
 `;
-
-
-
-
-
