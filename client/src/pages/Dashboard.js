@@ -17,10 +17,12 @@ import AnswerList from '../components/AnswerList';
 // eventually import the AnswerForm from components
 
 import Leaderboard from '../components/Leaderboard';
+import Auth from '../utils/auth';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
 
- 
+  
 
   //This is similar to the query logic that you used on the homepage. The variables loading and data are destructured from the useQuery Hook
   //The loading variable is then used to briefly show a loading <div> element, and the data variable is used to populate a thought object (data.thought)
@@ -52,7 +54,16 @@ const handleClick = () => {
   }
 
 }
-  
+
+  if (!Auth.loggedIn()) {
+    return (
+      <div>
+        <h2>Oops, you must be logged in to view this page!</h2>
+        <Link to='/login'>Login</Link>
+        <Link to='/signup'>Signup</Link>
+      </div>
+    )
+  }
 
   return (
 
