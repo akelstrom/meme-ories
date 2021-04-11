@@ -13,6 +13,7 @@ import Question from '../components/Question';
 import AnswerForm from '../components/AnswerForm';
 
 import AnswerList from '../components/AnswerList';
+import Header from '../components/Header';
 
 //import Auth from '../utils/auth';
 
@@ -58,36 +59,31 @@ const handleClick = () => {
 
   return (
 
-  <div>
-    <Header/>
+  
     <Container>
         <Grid container>
           <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
-          <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
-           Meme Area
-            </Grid>
+            <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
+            <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
+            <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
+            <button value = "Next" onClick = {handleClick}>Next Meme</button>
+          </Grid>
 
-            <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
-            Text Area<br/>
-            Button Here
-            </Grid>
-</Grid>
-<Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+<Grid item xs={12} sm={12} md={4} lg= {4} className="gridItem">
 <Leaderboard/>
-Find Friends Here
+
 </Grid>
 </Grid>
 
-</Container>
-    <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
+
+
+    
   
 
     {/* this is where the Answer component will go... we need to loop throught them*/}
-    <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
-    <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
-    <button value = "Next" onClick = {handleClick}>Next Meme</button>
-    <Leaderboard />
-  </div>
+    
+    </Container>
+    
   );
 };
 
