@@ -13,6 +13,7 @@ import NoMatch from './pages/NoMatch';
 import AddFriends from './pages/AddFriends';
 import Nav from './components/Nav';
 import GameRules from './components/GameRules';
+
 import './App.css';
 
 const client = new ApolloClient({
@@ -50,6 +51,7 @@ function App() {
           </Provider>
         </div>
       </Router>
+      
     </ApolloProvider>
   );
 }

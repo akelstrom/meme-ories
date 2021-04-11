@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core'
+
 
 //import { useParams } from 'react-router-dom';
 
@@ -57,6 +59,26 @@ const handleClick = () => {
   return (
 
   <div>
+    <Header/>
+    <Container>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+          <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+           Meme Area
+            </Grid>
+
+            <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+            Text Area<br/>
+            Button Here
+            </Grid>
+</Grid>
+<Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+<Leaderboard/>
+Find Friends Here
+</Grid>
+</Grid>
+
+</Container>
     <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
   
 
