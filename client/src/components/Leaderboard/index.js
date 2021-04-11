@@ -50,6 +50,7 @@ function Leaderboard() {
     return (
         <div>
             <h2>🤡 Leaderboard:</h2>
+            <p>You have {data.me.score} laughs!</p>
             {friendsState.map(friend => (
                 <LeaderboardItem key={friend._id} friend={friend} />
             ))}

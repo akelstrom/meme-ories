@@ -2,11 +2,9 @@ import React from 'react';
 
 const LeaderboardItem = ({ friend }) => {
 
-    console.log(friend);
-
     return (
         <div>
-            <p>{friend.username} has X laughs</p>
+            <p>{friend.username} has {friend.score} laughs</p>
         </div>
     );
 };
