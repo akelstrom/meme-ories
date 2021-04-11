@@ -64,15 +64,18 @@ const handleClick = () => {
         <Grid container>
           <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
             <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg= {4} className="gridItem">
+<Leaderboard/>
+
+</Grid>
+            <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
             <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
             <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
             <button value = "Next" onClick = {handleClick}>Next Meme</button>
           </Grid>
 
-<Grid item xs={12} sm={12} md={4} lg= {4} className="gridItem">
-<Leaderboard/>
 
-</Grid>
 </Grid>
 
 
