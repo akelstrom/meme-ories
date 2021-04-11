@@ -19,9 +19,8 @@ const UserList = () => {
                 users: data.users
             });
 
-            //idbpromise stuff
         } else if (!loading) {
-            //idbpromise stuff
+
         }
     }, [data, loading, dispatch]);
 
