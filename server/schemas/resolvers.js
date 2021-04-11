@@ -133,49 +133,49 @@ const resolvers = {
     // for each answer in the array return a new array of answers where username =  context.user.username 
      addScore: async (parent, {username}, context) => {
 
-        //if(context.user) {
+        // //if(context.user) {
 
-         const questionsArray = await Question.find()
+        //  const questionsArray = await Question.find()
 
-         //console.log(questionsArray)
+        //  console.log(questionsArray)
 
-            let userAnswersArray
+        //     let userAnswersArray
 
-            let i
-            for (i=0; i<questionsArray.length; i++) {
+        //     let i
+        //     for (i=0; i<questionsArray.length; i++) {
 
-                //console.log(questionsArray[i].answers)
+        //         //console.log(questionsArray[i].answers)
 
-                 userAnswersArray = questionsArray[i].answers.filter(answer => {
-                    if(answer.username && answer.username === "Kristina") {
-                        //console.log(answer)
-                        return answer
-                    }
-                    return
-                })
-            }
-            //console.log(userAnswersArray)
-            //console.log(userAnswersArray[0].votes)
-            let score = 0
+        //          userAnswersArray = questionsArray[i].answers.filter(answer => {
+        //             if(answer.username && answer.username === "Kristina") {
+        //                 //console.log(answer)
+        //                 return answer
+        //             }
+        //             return
+        //         })
+        //     }
+        //     console.log(userAnswersArray)
+        //     //console.log(userAnswersArray[0].votes)
+        //     let score = 0
             
-             function sum () {
+        //      function sum () {
                 
-                let index
-                for (index=0; index<userAnswersArray.length; index++) {
-                      score += userAnswersArray[index].votes
-                      console.log(userAnswersArray[index].votes)
-                }
+        //         let index
+        //         for (index=0; index<userAnswersArray.length; index++) {
+        //               score += userAnswersArray[index].votes
+        //               console.log(userAnswersArray[index].votes)
+        //         }
 
                 
    
-            }
-            sum();
+        //     }
+        //     sum();
             //console.log(updatedScore)
             //console.log(score)
 
             const updatedUser = await User.findOneAndUpdate(
                 { username: username},
-                { score: score},
+                { $inc: {score: 1}},
                 { new: true, runValidators: true }
             );
 
