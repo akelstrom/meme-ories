@@ -15,7 +15,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
     const handleChange = event => {
         
             setBody(event.target.value);
-            console.log(answerBody)
+            //console.log(answerBody)
         
     };
 
