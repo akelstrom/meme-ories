@@ -1,0 +1,10 @@
+.header-container {
+    background-color: var(--home-blue);
+    padding: 20px;
+}
+
+img {
+    padding: 20px;
+    width: 70%;
+    height: auto;
+}

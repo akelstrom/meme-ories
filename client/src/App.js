@@ -6,13 +6,14 @@ import { Provider } from 'react-redux';
 import store from './utils/store';
 
 import Home from './pages/Home';
+import Header from './components/Header';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import AddFriends from './pages/AddFriends';
-import Nav from './components/Nav';
-import GameRules from './components/GameRules';
+// import Nav from './components/Nav';
+// import GameRules from './components/GameRules';
 import './App.css';
 
 const client = new ApolloClient({
@@ -33,12 +34,11 @@ function App() {
 
     
     <ApolloProvider client={client}>
-      
-      <GameRules/>
+
       <Router>
         <div>
           <Provider store={store}>
-            <Nav />
+            <Header />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />

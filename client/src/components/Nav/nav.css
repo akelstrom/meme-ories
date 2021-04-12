@@ -1,0 +1,24 @@
+#nav_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    background-color: var(--home-blue);
+    padding: 0;
+  }
+  
+  .nav-link-active {
+    background-color: var(--deep-purple);
+    color: white;
+  }
+  
+  .nav-link {
+    border: 3px dotted var(--bright-pink);
+    color: white;
+    border-radius: 20%;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px;
+  }

@@ -1,17 +1,20 @@
 import React from 'react';
 import Auth from '../../utils/auth';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './nav.css'
+
+
 
 function Nav() {
 
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
-                <ul>
-                    <li>
-                        <Link to="/dashboard">
+                <ul id="nav_menu">
+                    <li className="nav_link">
+                        <NavLink className="nav-link" activeClassName="nav-link-active" to="/dashboard">
                             Dashboard
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
                         <a href="/" onClick={() => Auth.logout()}>
@@ -22,16 +25,18 @@ function Nav() {
             );
         } else {
             return (
-                <ul>
-                    <li>
-                        <Link to='/signup'>
+                <ul id="nav_menu">
+                    <li >
+                      
+                        <NavLink className="nav-link" activeClassName="nav-link-active" to='/signup'>
                             Signup
-                        </Link>
+                        </NavLink>
+                     
                     </li>
-                    <li>
-                        <Link to='/login'>
+                    <li className="nav_link">
+                        <NavLink className="nav-link" activeClassName="nav-link-active" to='/login'>
                             Login
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             );
@@ -40,11 +45,6 @@ function Nav() {
 
     return (
         <header>
-            <h1>
-                <Link to='/'>
-                    Sh*ts n' Giggles
-                </Link>
-            </h1>
 
             <nav>
                 {showNavigation()}
