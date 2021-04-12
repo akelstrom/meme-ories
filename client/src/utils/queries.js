@@ -6,10 +6,12 @@ export const QUERY_ME = gql`
             _id
             username
             email
+            score
             friendCount
             friends {
                 _id
                 username
+                score
                 friendCount
             }
         }
@@ -22,6 +24,7 @@ export const QUERY_USER = gql`
             _id
             username
             email
+            score
             questions {
                 _id
                 questionText

@@ -42,7 +42,7 @@ function Nav() {
         <header>
             <h1>
                 <Link to='/'>
-                    Sh*ts n' Giggles
+                    Meme-Ories
                 </Link>
             </h1>
 
