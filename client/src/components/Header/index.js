@@ -1,5 +1,6 @@
 import React from "react";
 import NavLink from "../Nav";
+
 import "./header.css";
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,9 +18,9 @@ const Header = () => {
 
   return (
     <div className="header-container">
-        <NavLink />
+       <NavLink />
     <Container fixed className={classes.root}>
-      <img src={require("../../images/logo.png").default} alt="logo" />
+      <img href="/" src={require("../../images/logo.png").default} alt="logo" />
       </Container>
     </div>
   );

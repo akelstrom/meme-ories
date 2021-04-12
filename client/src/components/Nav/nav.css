@@ -9,14 +9,14 @@
   }
   
   .nav-link-active {
-    background-color: var(--deep-purple);
+    background-color: var(--bright-pink);
     color: white;
   }
   
-  .nav-link {
+  .link {
     border: 3px dotted var(--bright-pink);
-    color: white;
-    border-radius: 20%;
+    color: var(--gray);
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;

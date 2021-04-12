@@ -4,7 +4,7 @@
 }
 
 img {
-    padding: 20px;
-    width: 70%;
+    width: 700px;
     height: auto;
+    max-width: 100%;
 }

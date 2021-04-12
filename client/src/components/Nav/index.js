@@ -12,7 +12,7 @@ function Nav() {
             return (
                 <ul id="nav_menu">
                     <li className="nav_link">
-                        <NavLink className="nav-link" activeClassName="nav-link-active" to="/dashboard">
+                           <NavLink className="link" activeClassName="nav-link-active" to="/dashboard">
                             Dashboard
                         </NavLink>
                     </li>
@@ -28,13 +28,13 @@ function Nav() {
                 <ul id="nav_menu">
                     <li >
                       
-                        <NavLink className="nav-link" activeClassName="nav-link-active" to='/signup'>
+                        <NavLink className="link" activeClassName="nav-link-active" to='/signup'>
                             Signup
                         </NavLink>
                      
                     </li>
                     <li className="nav_link">
-                        <NavLink className="nav-link" activeClassName="nav-link-active" to='/login'>
+                        <NavLink className="link" activeClassName="nav-link-active" to='/login'>
                             Login
                         </NavLink>
                     </li>
