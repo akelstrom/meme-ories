@@ -9,10 +9,9 @@ const useStyles = makeStyles(() => ({
         justifyContent: "space-around",
     },
     box: {
-        border: "solid",
-        borderStyle: "dotted 5px",
+        border: "dotted 5px",
         borderRadius: "10px",
-        boxShadow: "-13px 24px #f64c72",
+        boxShadow: "-13px 24px #242582",
         marginRight: "30px",
         marginTop: "20px"
     }

@@ -11,8 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     root: {
         display: "flex",
-        justifyContent: "space-evenly",
-        marginTop: "10px"
+        justifyContent: "space-around",
+        marginTop: "20px"
     }
 }));
 
@@ -61,6 +61,7 @@ const Signup = () => {
   };
 
   return (
+    <Container>
     <Container className={classes.root}>
     <section className='signup-page'>
     <h1 className='contact-header' data-testid="h1tag">Sign-up here</h1>
@@ -105,6 +106,7 @@ const Signup = () => {
     {error && <div>Sign up failed</div>}
   </section>
   <Login />
+  </Container>
   </Container>
   );
 };
