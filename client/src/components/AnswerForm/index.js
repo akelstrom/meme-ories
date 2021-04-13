@@ -23,7 +23,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
     const handleFormSubmit = async event => {
         event.preventDefault();
         if(!answerBody) {
-          alert('you must provide an answer!')
+          toast.error('❕ Error: Please Try Again');
         }
         //To prevent any unexpected crashes, you'll also want to wrap this in a try...catch statement.
         try {
