@@ -68,3 +68,8 @@ p {
   width: 30%;
 }
 
+.Toastify__toast--error {
+  background: var(--bright-pink) !important;
+  color: var(--gray);
+  text-align: center;
+}

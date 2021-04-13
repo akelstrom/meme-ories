@@ -8,7 +8,8 @@ import Container from '@material-ui/core/Container';
 import Login from './Login';
 import { makeStyles } from '@material-ui/core/styles';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.css';
+import gif from '../images/blinking-meme.gif';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -34,7 +35,7 @@ const Signup = () => {
   const [addUser] = useMutation(ADD_USER);
 
   const classes = useStyles();
-  
+
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -59,7 +60,12 @@ const Signup = () => {
 
     } catch (e) {
       console.error(e);
-      toast.error('❕ Signup Failed: Please Try Again');
+      toast.error(
+        <div className='toast'>
+          <img src={gif} alt='error' />
+          Signup Failed: Please Try Again!
+        </div>
+        );
     }
   };
 

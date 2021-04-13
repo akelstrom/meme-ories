@@ -4,6 +4,7 @@ import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import gif from '../images/blinking-meme.gif';
 import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
 
@@ -44,7 +45,12 @@ const Login = props => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
-      toast.error('❕ Login Failed: Please Try Again');
+      toast.error(
+        <div className='toast'>
+          <img src={gif} alt='error' />
+          Login Failed: Please Try Again!
+        </div>
+        );
     }
 
     // clear form values
