@@ -5,6 +5,7 @@ import {useQuery } from '@apollo/react-hooks';
 import { ADD_VOTE } from '../../utils/mutations';
 import { ADD_SCORE } from '../../utils/mutations';
 import {QUERY_ME} from '../../utils/queries';
+import './AnswerList.css';
 
 
 const AnswerList = ({ answers, questionId }) => {
@@ -112,7 +113,7 @@ const AnswerList = ({ answers, questionId }) => {
   return (
     <div>
         <div>
-            <span>Captions:</span>
+            <h1 className="caption-header">Captions:</h1>
         </div>
         <div>
         { answers &&

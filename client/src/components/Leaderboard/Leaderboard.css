@@ -2,21 +2,37 @@
     color: var(--bright-pink);
     background-color: var(--home-blue);
     border: 5px dotted var(--bright-pink);
-    box-shadow:  -13px 24px #242582;
+    box-shadow:  -13px 24px var(--bright-pink);
     border-radius: 10px;
-    width: 100%;
-    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    margin-right: 40px;
 }
 
 h2 {
     color: var(--gray);
-    margin-left: 20px;
+    margin-left: 30px;
+    padding: 0;
 }
 
 p {
-    margin-left: 20px;
+    margin-left: 30px;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .button {
-    color: var(--home-blue);
+    border: 3px dotted var(--bright-pink);
+    border-radius: 10px;
+    padding: 7px;
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 10px;
 }

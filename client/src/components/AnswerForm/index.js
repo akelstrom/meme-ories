@@ -58,7 +58,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
           onChange={handleChange}
         ></textarea>
 
-        <button type="submit">
+        <button className="link" type="submit">
           Submit
         </button>
       </form>

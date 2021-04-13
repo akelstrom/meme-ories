@@ -20,7 +20,7 @@ const Header = () => {
     <div className="header-container">
        <NavLink />
       <Container fixed className={classes.root}>
-       <a href="/"><img src={require("../../images/logo.png").default} alt="logo" /> </a> 
+       <a href="/"><img src={require("../../images/logo.png").default} alt="logo" className="logo"/> </a> 
       </Container>
     </div>
   );
