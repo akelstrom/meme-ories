@@ -17,7 +17,7 @@ const Question = ({ questionText, question, questionIndex, setQuestionIndex }) =
     return (
         <div>
             <h3> <img width="40%"
-             height="auto" src={require(`../../images/${questionText}.jpg`).default} alt="meme"/></h3>
+             height="auto" src={require(`../../images/${questionText}.jpg`).default} alt="meme" id={questionId}/></h3>
             
         </div>
 
