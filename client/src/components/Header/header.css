@@ -1,0 +1,10 @@
+.header-container {
+    background-color: var(--home-blue);
+    padding: 20px;
+}
+
+img {
+    width: 700px;
+    height: auto;
+    max-width: 100%;
+}
