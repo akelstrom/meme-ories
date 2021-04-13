@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { useToasts } from 'react-toast-notifications';
 
 const Login = props => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
+
+  const { addToast } = useToasts();
   
     // update state based on form input changes
     const handleChange = (event) => {
@@ -29,6 +32,11 @@ const Login = props => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
+      addToast('Error: Login Failed', 
+        {
+          appearance: 'error',
+        }
+      );
     }
 
     // clear form values
@@ -72,5 +80,5 @@ const Login = props => {
     </section>
   );
 };
-  
+
 export default Login;
