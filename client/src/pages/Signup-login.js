@@ -14,8 +14,8 @@ import gif from '../images/blinking-meme.gif';
 const useStyles = makeStyles(() => ({
     root: {
         display: "flex",
-        justifyContent: "space-evenly",
-        marginTop: "10px"
+        justifyContent: "space-around",
+        marginTop: "5px"
     }
 }));
 
@@ -70,6 +70,7 @@ const Signup = () => {
   };
 
   return (
+    <Container>
     <Container className={classes.root}>
     <section className='signup-page'>
     <h1 className='contact-header' data-testid="h1tag">Sign-up here</h1>
@@ -113,6 +114,7 @@ const Signup = () => {
     </form>
   </section>
   <Login />
+  </Container>
   </Container>
   );
 };
