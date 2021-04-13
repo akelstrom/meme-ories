@@ -32,7 +32,7 @@ const Login = props => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
-      addToast('Error: Login Failed', 
+      addToast('Login Failed: Incorrect Credentials', 
         {
           appearance: 'error',
         }
