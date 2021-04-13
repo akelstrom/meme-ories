@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     root: {
         display: "flex",
         justifyContent: "space-around",
-        marginTop: "20px"
+        marginTop: "5px"
     }
 }));
 
