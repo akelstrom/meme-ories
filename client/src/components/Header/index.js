@@ -19,8 +19,8 @@ const Header = () => {
   return (
     <div className="header-container">
        <NavLink />
-    <Container fixed className={classes.root}>
-      <img href="/" src={require("../../images/logo.png").default} alt="logo" />
+      <Container fixed className={classes.root}>
+       <a href="/"><img src={require("../../images/logo.png").default} alt="logo" /> </a> 
       </Container>
     </div>
   );

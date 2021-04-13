@@ -54,7 +54,7 @@ p {
 .contact-div {
   color: var(--bright-pink);
   padding: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .contact-div input {
@@ -65,6 +65,6 @@ p {
   border: var(--bright-pink) solid 5px;
   border-radius: 10px;
   box-shadow: -13px 24px #f64c72; 
-  width: 40%;
+  width: 30%;
 }
 

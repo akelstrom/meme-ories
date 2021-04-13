@@ -28,14 +28,14 @@ function Nav() {
                 <ul id="nav_menu">
                     <li >
                       
-                        <NavLink className="link" activeClassName="nav-link-active" to='/signup'>
-                            Signup
+                        <NavLink className="link" activeClassName="nav-link-active" to='/signup-login'>
+                            Login/Signup
                         </NavLink>
                      
                     </li>
                     <li className="nav_link">
-                        <NavLink className="link" activeClassName="nav-link-active" to='/login'>
-                            Login
+                        <NavLink className="link" activeClassName="nav-link-active" to='/'>
+                            Home
                         </NavLink>
                     </li>
                 </ul>

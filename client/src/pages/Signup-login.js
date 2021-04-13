@@ -11,7 +11,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     root: {
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-evenly",
+        marginTop: "10px"
     }
 }));
 
@@ -62,10 +63,10 @@ const Signup = () => {
   return (
     <Container className={classes.root}>
     <section className='signup-page'>
-    <h1 className='contact-header' data-testid="h1tag">Sign-up here:</h1>
+    <h1 className='contact-header' data-testid="h1tag">Sign-up here</h1>
     <form onSubmit={handleFormSubmit}>
       <div className='contact-div'>
-        <label className="contact-label" htmlFor="name">Username:</label><br/>
+        <label className="contact-label" htmlFor="name">Username</label><br/>
         <TextField 
           type="username" 
           name="username"
@@ -76,7 +77,7 @@ const Signup = () => {
         />
       </div>
       <div className='contact-div'>
-        <label className="contact-label" htmlFor="email">Email:</label><br/>
+        <label className="contact-label" htmlFor="email">Email</label><br/>
         <TextField 
           type="email" 
           name="email"
@@ -87,7 +88,7 @@ const Signup = () => {
         />
       </div>
       <div className='contact-div'>
-        <label className="contact-label" htmlFor="password">Password:</label><br/>
+        <label className="contact-label" htmlFor="password">Password</label><br/>
         <TextField 
           type="password" 
           name="password"

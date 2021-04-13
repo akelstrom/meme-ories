@@ -10,7 +10,7 @@
   
   .nav-link-active {
     background-color: var(--bright-pink);
-    color: white;
+    color: var(--dark-blue);
   }
   
   .link {
