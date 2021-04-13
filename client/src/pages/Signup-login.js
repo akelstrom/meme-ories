@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import Login from './Login';
 import { makeStyles } from '@material-ui/core/styles';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -29,7 +31,7 @@ const Button = styled.button`
 
 const Signup = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-  const [addUser, { error }] = useMutation(ADD_USER);
+  const [addUser] = useMutation(ADD_USER);
 
   const classes = useStyles();
   
@@ -57,6 +59,7 @@ const Signup = () => {
 
     } catch (e) {
       console.error(e);
+      toast.error('❕ Signup Failed: Please Try Again');
     }
   };
 
@@ -102,7 +105,6 @@ const Signup = () => {
         <Button>Submit</Button>
       </div>
     </form>
-    {error && <div>Sign up failed</div>}
   </section>
   <Login />
   </Container>

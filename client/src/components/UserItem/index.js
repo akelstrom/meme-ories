@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const UserItem = ({ user }) => {
     const dispatch = useDispatch();
@@ -27,6 +29,7 @@ const UserItem = ({ user }) => {
             });
         } catch (e) {
             console.error(e);
+            toast.error('❕ Error: Please Try Again');
         }
     }
 

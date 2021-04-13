@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_ANSWER } from '../../utils/mutations';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 
 const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArray }) => {
@@ -10,7 +11,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
     //const [characterCount, setCharacterCount] = useState(0);
 
     //Declare the necessary mutation variables in the functional component with the following code:
-    const [addAnswer, { error }] = useMutation(ADD_ANSWER);
+    const [addAnswer] = useMutation(ADD_ANSWER);
 
     const handleChange = event => {
         
@@ -35,6 +36,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
             
         } catch(e) {
             console.error(e);
+            toast.error('❕ Error: Please Try Again');
         }
 
         // set it to less than 4 so user is only answering 5 questions

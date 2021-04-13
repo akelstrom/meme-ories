@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-<<<<<<< HEAD
-import { useToasts } from 'react-toast-notifications';
-=======
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
 
@@ -18,13 +17,10 @@ const Button = styled.button`
   margin: 5px;
   background-color: var(--home-blue)
 `
->>>>>>> develop
 
 const Login = props => {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN);
-
-  const { addToast } = useToasts();
+  const [login] = useMutation(LOGIN);
   
     // update state based on form input changes
     const handleChange = (event) => {
@@ -48,11 +44,7 @@ const Login = props => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
-      addToast('Login Failed: Incorrect Credentials', 
-        {
-          appearance: 'error',
-        }
-      );
+      toast.error('❕ Login Failed: Please Try Again');
     }
 
     // clear form values
@@ -92,7 +84,6 @@ const Login = props => {
         <Button>Submit</Button>
         </div>
       </form>
-      {error && <div>Login failed</div>}
     </section>
   );
 };
