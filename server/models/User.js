@@ -21,7 +21,8 @@ const userSchema = new Schema(
       minlength: 5
     },
     score: {
-      type: Number
+      type: Number,
+      default: 0
     },
     friends: [
       {

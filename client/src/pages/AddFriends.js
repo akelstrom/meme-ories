@@ -1,14 +1,13 @@
 import React from 'react'
-import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core'
-/*DATA*/
-import friendsData from '../utils/friendsData';
-/*ICONS*/
-
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
-import FaceIcon from '@material-ui/icons/Face';
 import UserList from '../components/UserList';
+import Auth from '../utils/auth';
+import { Redirect } from 'react-router-dom';
 
 const AddFriends = () => {
+  if (!Auth.loggedIn()) {
+    return <Redirect to="/" />
+  }
+
     return (
       <div>
         <UserList />

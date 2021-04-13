@@ -7,6 +7,7 @@ import { useMutation, useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
 
 const UserItem = ({ user }) => {
     const dispatch = useDispatch();
@@ -18,15 +19,6 @@ const UserItem = ({ user }) => {
 
     const [addFriend] = useMutation(ADD_FRIEND);
     const friendedUser = friendsState.find((friend) => friend._id === id);
-
-    /* const checkFriendStatus = () => {
-
-        if (friendedUser) {
-            return <p>Already Friends</p>
-        } else {
-            return <Button onClick={handleClick}>Add Friend <PersonAddIcon/></Button>
-        }
-    } */
 
     const handleClick = async () => {
         try {
@@ -45,9 +37,16 @@ const UserItem = ({ user }) => {
                 friends: data.me.friends
             });
 
-            // idb stuff
+            data.me.friends.forEach((friend) => {
+                idbPromise('friends', 'put', friend);
+            });
         } else if (!loading) {
-            //idb stuff
+            idbPromise('friends', 'get').then((friends) => {
+                dispatch({
+                    type: UPDATE_FRIENDS,
+                    friends: friends
+                });
+            });
         }
     }, [data, loading, dispatch]);
 

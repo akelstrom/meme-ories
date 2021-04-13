@@ -5,8 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
-// Will we use idbPromise from modules for indexedDB? 
-//import { idbPromise } from '../../utils/helpers';
+import { idbPromise } from '../../utils/helpers';
 
 function Leaderboard() {
     // variables for Redux State, will probably need to adjust later but this is a good baseline
@@ -25,16 +24,16 @@ function Leaderboard() {
                 friends: data.me.friends
             });
 
-            //data.gameHistory.forEach((game) => {
-                //idbPromise('gameHistory', 'put', game);
-            //});
+            data.me.friends.forEach((friend) => {
+                idbPromise('friends', 'put', friend);
+            });
         } else if (!loading) {
-            /* idbPromise('gameHistory', 'get').then((games) => {
+            idbPromise('friends', 'get').then((friends) => {
                 dispatch({
-                    //type: SOME ACTION,
-                    //gameHistory: gameHistory
+                    type: UPDATE_FRIENDS,
+                    friends: friends
                 });
-            }); */
+            });
         }
     }, [data, loading, dispatch]);
 
@@ -51,6 +50,7 @@ function Leaderboard() {
     return (
         <div>
             <h2>🤡 Leaderboard:</h2>
+            <p>You have {data.me.score} laughs!</p>
             {friendsState.map(friend => (
                 <LeaderboardItem key={friend._id} friend={friend} />
             ))}

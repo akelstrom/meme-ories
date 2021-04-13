@@ -4,7 +4,7 @@ const LeaderboardItem = ({ friend }) => {
 
     return (
         <div>
-            <p>{friend.username} has X laughs</p>
+            <p>{friend.username} has {friend.score} laughs</p>
         </div>
     );
 };

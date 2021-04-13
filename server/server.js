@@ -26,6 +26,12 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
+// This should make sure the serviceWorker registers successfully
+app.get("/serviceWorker.js", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "public", "serviceWorker.js"));
+});
+
+// Wildcard route
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });

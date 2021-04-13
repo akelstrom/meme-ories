@@ -45,6 +45,11 @@ function Nav() {
 
     return (
         <header>
+            <h1>
+                <Link to='/'>
+                    Meme-Ories
+                </Link>
+            </h1>
 
             <nav>
                 {showNavigation()}

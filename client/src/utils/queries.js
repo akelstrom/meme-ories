@@ -11,6 +11,7 @@ export const QUERY_ME = gql`
             friends {
                 _id
                 username
+                score
                 friendCount
             }
         }
