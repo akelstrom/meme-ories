@@ -54,7 +54,7 @@ const Dashboard = () => {
             <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
             </Grid>
             <Grid item xs={12} sm={12} md={4} lg= {4} className="gridItem">
-<Leaderboard/>
+            <Leaderboard/>
 
 </Grid>
             <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
@@ -63,6 +63,7 @@ const Dashboard = () => {
             <button value = "Next" onClick = {handleClick}>Next Meme</button>
           </Grid>
 
+  
 
 </Grid>
 

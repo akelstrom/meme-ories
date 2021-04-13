@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import './UserItem.css';
 
 const UserItem = ({ user }) => {
     const dispatch = useDispatch();
@@ -51,7 +52,7 @@ const UserItem = ({ user }) => {
     }, [data, loading, dispatch]);
 
     return (
-        <Card elevation={4} className='project-card'>
+        <div className='project-card'>
             <CardMedia>
             </CardMedia>
             <CardContent>
@@ -61,11 +62,11 @@ const UserItem = ({ user }) => {
             {friendedUser ? (
                 <p>Already Friends</p>
             ) : (
-                <Button onClick={handleClick}>Add Friend <PersonAddIcon/></Button>
+                <button className="link" onClick={handleClick}>Add Friend <PersonAddIcon/></button>
             )}
             </center>
             </CardContent>
-        </Card>
+        </div>
     );
 };
 

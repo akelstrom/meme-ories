@@ -62,9 +62,12 @@ p {
 }
 
 .signup-page, .login-page {
-  border: var(--bright-pink) solid 5px;
+  border: var(--bright-pink) dotted 5px;
   border-radius: 10px;
-  box-shadow: -13px 24px #f64c72; 
-  width: 30%;
+  box-shadow: -13px 24px var(--bright-pink); 
+  width: 40%;
+  display: flex;
+  flex-direction: column;
 }
+
 

@@ -11,8 +11,8 @@ const useStyles = makeStyles(() => ({
     box: {
         border: "dotted 5px",
         borderRadius: "10px",
-        boxShadow: "-13px 24px #242582",
-        margin: "0 20px"
+        boxShadow: "-13px 24px var(--bright-pink)",
+        margin: "30px"
     }
 }));
 const Home = () => {

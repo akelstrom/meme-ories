@@ -17,7 +17,7 @@ function Nav() {
                         </NavLink>
                     </li>
                     <li>
-                        <a href="/" onClick={() => Auth.logout()}>
+                        <a href="/" className="link" onClick={() => Auth.logout()}>
                             Logout
                         </a>
                     </li>
