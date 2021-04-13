@@ -23,7 +23,7 @@ const MemeList = () => {
             <p>This is the dashboard now!</p>
             {questionsArray && questionsArray.map(question => (
                
-            <Link to={`/question/${question.question._id}`}><img width="40%" height="auto" src={require(`../images/${question.questionText}.jpg`).default} alt="meme" key={question.questionText}/> </Link>
+            <Link to={`/question/${question._id}`}><img width="40%" height="auto" src={require(`../images/${question.questionText}.jpg`).default} alt="meme" key={question.questionText}/> </Link>
 
             ))}
             {/* <img src={require(`../images/${1}.jpg`).default} /> */}
