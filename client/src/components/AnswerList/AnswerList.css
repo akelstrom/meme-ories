@@ -1,6 +1,6 @@
 .caption-form {
     border: 3px dotted var(--bright-pink);
-    box-shadow: -13px 24px var(--dark-blue); 
+    box-shadow: -13px 20px var(--dark-blue); 
     border-radius: 10px;
     max-width: 100%;
     height: auto;
