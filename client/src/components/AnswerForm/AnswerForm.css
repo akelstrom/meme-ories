@@ -1,0 +1,10 @@
+.caption-textarea {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    border: 3px dotted var(--bright-pink);
+    border-radius: 10px;
+    background-color: var(--home-blue);
+    color: var(--bright-pink);
+    font-family: sans-serif;
+}

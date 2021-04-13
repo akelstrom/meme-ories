@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core'
+import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core';
 
 
 //import { useParams } from 'react-router-dom';

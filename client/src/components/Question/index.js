@@ -20,19 +20,6 @@ const Question = ({ questionText, question, questionIndex, setQuestionIndex }) =
               src={require(`../../images/${questionText}.jpg`).default} alt="meme" className="meme"/></h3>
             
         </div>
-
-/* <div>
-{questionText &&
-  questionText.map((questionText, questionIndex) => {
-    <img
-      width="40%"
-      height="auto"
-      src={require(`../../images/${questionText}/${questionIndex}.jpg`).default}
-      alt="meme"
-      key={questionText}
-    />;
-  })}
-</div> */
     );
 }; 
 
