@@ -29,7 +29,20 @@ const UserList = () => {
         <div>
             <Container>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={3} className="gridItem">
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
+                        {usersState.map(user => (
+                            <UserItem key={user._id} user={user} />
+                        ))}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
+                        {usersState.map(user => (
+                            <UserItem key={user._id} user={user} />
+                        ))}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
                         {usersState.map(user => (
                             <UserItem key={user._id} user={user} />
                         ))}
