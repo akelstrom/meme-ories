@@ -18,16 +18,11 @@ const AnswerList = ({ answers, questionId }) => {
     me = data.me.username
   }
 
-  // console.log(data);
-  // console.log("me:" + me)
-  // console.log(answers)
 
   const [addVote, {error}] = useMutation(ADD_VOTE);
   const [addScore, {error: scoreError}] = useMutation(ADD_SCORE);
 
-   //const [buttonText, setButtonText] = useState('add vote');
-   //const [buttonState, setButtonState] = useState('')
-
+  
    // get parsed item from local storage if exists 
    // if it doesn't exits set to empty array 
    const answerIdArray = JSON.parse(localStorage.getItem("clicked answers")) || []

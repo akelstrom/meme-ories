@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArray }) => {
 
     const [answerBody, setBody] = useState('');
-    //const [characterCount, setCharacterCount] = useState(0);
+    
 
     //Declare the necessary mutation variables in the functional component with the following code:
     const [addAnswer] = useMutation(ADD_ANSWER);
@@ -17,7 +17,6 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
     const handleChange = event => {
         
             setBody(event.target.value);
-            //console.log(answerBody)
         
     };
 
@@ -28,7 +27,6 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
         }
         //To prevent any unexpected crashes, you'll also want to wrap this in a try...catch statement.
         try {
-            //add reaction to database, getting thoughtId from props 
             await addAnswer ({
                 variables: { answerBody, questionId }
             });
@@ -39,16 +37,7 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
             console.error(e);
             toast.error('❕ Error: Please Try Again');
         }
-
-        // set it to less than 4 so user is only answering 5 questions
-        
-        // if (questionIndex < 4) {
-        //   setQuestionIndex(questionIndex+=1)
-        // } else {
-        //   alert("you have answered all the questions")
-        // }
-        
-        
+  
     };
 
   return (
