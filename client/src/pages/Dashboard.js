@@ -41,6 +41,10 @@ const Dashboard = () => {
     return <Redirect to="/" />
   }
 
+  if (!navigator.onLine) {
+    return <Leaderboard />
+  }
+
   return (
 
   
