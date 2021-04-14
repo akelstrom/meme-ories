@@ -9,5 +9,12 @@
 }
 
 .meme-container {
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+  .meme-container {
+    margin-top: 0px;
+  }
+
 }

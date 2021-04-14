@@ -27,6 +27,7 @@ const AnswerList = ({ answers, questionId }) => {
   const handleClick = (event) => {
     const answerId = event.target.value;
     const username = event.target.id;
+    
     let voteCount;
 
     const getVoteCount = async (voteCount) => {
@@ -60,11 +61,10 @@ const AnswerList = ({ answers, questionId }) => {
 
     // store clicked answers in an array of Id values in local storage
     answerIdArray.push(event.target.value);
-    console.log(answerIdArray);
+ 
     localStorage.setItem("clicked answers", JSON.stringify(answerIdArray));
-
     event.target.setAttribute("disabled", true);
-    event.target.innerHTML = "voted";
+    event.target.innerHTML = "laughted";
   };
 
   const answerIds = answers.map((answer) => answer._id);
@@ -94,11 +94,12 @@ const AnswerList = ({ answers, questionId }) => {
             <p key={index} className="caption-line">
               <span className="caption-body">"{answer.answerBody}"</span>{" "}
               <span className="divdier"></span> <br />
-              <span className="posted-by">
-                posted by: <span className="username">{answer.username} </span>
-              </span>
-              {/*answer ID: {answer._id} {'|'}*/}
-              <span className="vote-count">vote count: {answer.votes}</span>
+
+              {/* <span className="posted-by">
+                posted by: <span className="username" id="caption-username">{answer.username} </span>
+              </span> */}
+
+              <span className="vote-count">laugh count: {answer.votes}</span>
               {me != answer.username && (
                 <button
                   className="like-button"

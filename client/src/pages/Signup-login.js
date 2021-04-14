@@ -8,7 +8,6 @@ import Login from "./Login";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import gif from "../images/blinking-meme.gif";
-import Header from "../components/Header";
 
 const Signup = () => {
   const [formState, setFormState] = useState({

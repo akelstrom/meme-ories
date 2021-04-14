@@ -6,9 +6,9 @@ import Question from "../components/Question";
 import AnswerForm from "../components/AnswerForm";
 import AnswerList from "../components/AnswerList";
 import Leaderboard from "../components/Leaderboard";
-import Header from "../components/Header";
 import Auth from "../utils/auth";
 import { Redirect } from "react-router-dom";
+
 
 const Dashboard = () => {
   //This is similar to the query logic that you used on the homepage. The variables loading and data are destructured from the useQuery Hook

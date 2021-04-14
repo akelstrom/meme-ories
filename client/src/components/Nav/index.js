@@ -1,6 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { NavLink } from "react-router-dom";
+import GameRules from "../../components/GameRules"
 import "./nav.css";
 
 function Nav() {
@@ -23,6 +24,7 @@ function Nav() {
                 Logout
               </a>
             </li>
+            <li> <GameRules/></li>
           </ul>
         </div>
       );
