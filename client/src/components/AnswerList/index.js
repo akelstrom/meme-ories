@@ -128,7 +128,7 @@ const AnswerList = ({ answers, questionId }) => {
                 {/*answer ID: {answer._id} {'|'}*/}
                 <span className="vote-count">vote count: {answer.votes}</span>
                 {me!=answer.username &&
-                <button  className="like-button" disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}><AiFillLike/></button>}
+                <button  className="like-button" disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}>👍</button>}
             </p>
             ))}
         </div>

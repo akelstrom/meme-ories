@@ -47,7 +47,7 @@
     color: var(--bright-pink);
     background-color: var(--home-blue);
     text-decoration: none;
-    padding: 0.5rem;
+    margin-left: 2px;
 }
 
 
