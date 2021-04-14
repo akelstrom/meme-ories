@@ -22,8 +22,6 @@ const UserList = () => {
         console.log(searchValue, 'Break');
     }
 
-  console.log(searchUsers);
-
   useEffect(() => {
     if (data) {
       dispatch({
@@ -33,14 +31,6 @@ const UserList = () => {
       handleSearchChange(searchUsers);
     }
   }, [data, loading, searchUsers, dispatch]);
-
-  const handleSearchChange = (event) => {
-    const filteredList = usersState.filter((user) =>
-      user.username.includes(event)
-    );
-    setSearchValue(filteredList);
-    console.log(searchValue, "Break");
-  };
 
   return (
     <div>

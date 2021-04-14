@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LeaderboardItem from "../LeaderboardItem";
 import { useQuery } from "@apollo/react-hooks";
 import { useDispatch, useSelector } from "react-redux";
-import { UPDATE_FRIENDS } from "../../utils/actions";
+import { UPDATE_FRIENDS, UPDATE_SCORE } from "../../utils/actions";
 import { QUERY_ME } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import "./Leaderboard.css";
@@ -12,6 +12,7 @@ function Leaderboard() {
   // variables for Redux State
     const dispatch = useDispatch();
     const friendsState = useSelector((state) => state.friends);
+    const scoreState = useSelector((state) => state.score);
 
   //Query to get the friends data
     const { loading, data } = useQuery(QUERY_ME);
