@@ -8,7 +8,6 @@ import {QUERY_ME} from '../../utils/queries';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import './AnswerList.css';
-import { AiFillLike } from "react-icons/ai";
 
 const AnswerList = ({ answers, questionId }) => {
 
@@ -127,7 +126,7 @@ const AnswerList = ({ answers, questionId }) => {
                 <span className="posted-by">posted by: <span className="username">{answer.username} </span></span>
                 {/*answer ID: {answer._id} {'|'}*/}
                 <span className="vote-count">vote count: {answer.votes}</span>
-                {me!=answer.username &&
+                {me!==answer.username &&
                 <button  className="like-button" disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}>👍</button>}
             </p>
             ))}

@@ -13,8 +13,13 @@ const UserList = () => {
     const { loading, data } = useQuery(QUERY_USERS);
     const [searchUsers, setSearchUsers] = useState('');
     const [searchValue, setSearchValue] = useState([]);
-    
-    console.log(searchUsers);
+
+    const handleSearchChange = event => {
+        const filteredList = usersState.filter(user => user.username.includes(event)
+        );
+        setSearchValue(filteredList);
+        console.log(searchValue, 'Break');
+    }
 
     useEffect(() => {
         if (data) {
@@ -25,19 +30,7 @@ const UserList = () => {
             handleSearchChange(searchUsers)
         } 
 
-        
     }, [data, loading, searchUsers, dispatch]);
-
-    const handleSearchChange = event => {
-        //const filter = event.target.value;
-        const filteredList = usersState.filter(user => user.username.includes(event) 
-          //let values = 
-           // .join("")
-            //.toLowerCase();
-    );
-        setSearchValue(filteredList);
-        console.log(searchValue, 'Break');
-    }
 
     return (
         <div>

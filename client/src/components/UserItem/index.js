@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Card, CardMedia, CardContent, Button } from '@material-ui/core'
+import { CardMedia, CardContent } from '@material-ui/core'
 import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import FaceIcon from '@material-ui/icons/Face';
 import { ADD_FRIEND } from '../../utils/mutations';
@@ -28,6 +28,7 @@ const UserItem = ({ user }) => {
             await addFriend({
                 variables: { id: id }
             });
+            //window.location.reload();
         } catch (e) {
             console.error(e);
             toast.error('❕ Error: Please Try Again');
