@@ -1,63 +1,50 @@
-import React, { useState } from 'react';
-import './AnswerForm.css'
-import { useMutation } from '@apollo/react-hooks';
-import { ADD_ANSWER } from '../../utils/mutations';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css';
+import React, { useState } from "react";
+import "./AnswerForm.css";
+import { useMutation } from "@apollo/react-hooks";
+import { ADD_ANSWER } from "../../utils/mutations";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
+const AnswerForm = ({
+  questionId,
+  setQuestionIndex,
+  questionIndex,
+  questionsArray,
+}) => {
+  const [answerBody, setBody] = useState("");
 
-const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArray }) => {
+  //Declare the necessary mutation variables in the functional component with the following code
+  const [addAnswer] = useMutation(ADD_ANSWER);
 
-    const [answerBody, setBody] = useState('');
-    //const [characterCount, setCharacterCount] = useState(0);
+  const handleChange = (event) => {
+    setBody(event.target.value);
+  };
 
-    //Declare the necessary mutation variables in the functional component with the following code:
-    const [addAnswer] = useMutation(ADD_ANSWER);
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    if (!answerBody) {
+      toast.error("❕ Error: Please Try Again");
+    }
+    //To prevent any unexpected crashes
+    try {
+      //add caption to database, getting thoughtId from props
+      await addAnswer({
+        variables: { answerBody, questionId },
+      });
 
-    const handleChange = event => {
-        
-            setBody(event.target.value);
-            //console.log(answerBody)
-        
-    };
-
-    const handleFormSubmit = async event => {
-        event.preventDefault();
-        if(!answerBody) {
-          toast.error('❕ Error: Please Try Again');
-        }
-        //To prevent any unexpected crashes, you'll also want to wrap this in a try...catch statement.
-        try {
-            //add reaction to database, getting thoughtId from props 
-            await addAnswer ({
-                variables: { answerBody, questionId }
-            });
-        
-            setBody('')
-            
-        } catch(e) {
-            console.error(e);
-            toast.error('❕ Error: Please Try Again');
-        }
-
-        // set it to less than 4 so user is only answering 5 questions
-        
-        // if (questionIndex < 4) {
-        //   setQuestionIndex(questionIndex+=1)
-        // } else {
-        //   alert("you have answered all the questions")
-        // }
-        
-        
-    };
+      setBody("");
+    } catch (e) {
+      console.error(e);
+      toast.error("❕ Error: Please Try Again");
+    }
+  };
 
   return (
     <div>
-      
       <form onSubmit={handleFormSubmit}>
         <textarea
           placeholder="Enter your caption..."
-          value= {answerBody}
+          value={answerBody}
           onChange={handleChange}
           className="caption-textarea"
         ></textarea>

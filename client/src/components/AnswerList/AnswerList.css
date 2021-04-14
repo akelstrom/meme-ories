@@ -1,55 +1,47 @@
 .caption-form {
-    border: 3px dotted var(--bright-pink);
-    box-shadow: -13px 20px var(--dark-blue); 
-    border-radius: 10px;
-    max-width: 100%;
-    height: auto;
+  border: 3px dotted var(--bright-pink);
+  box-shadow: -13px 20px var(--dark-blue);
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .caption-header {
-    color: var(--gray);
+  color: var(--gray);
 }
 
 .posted-by {
-    color: var(--gray);
-    font-style: italic;
-
+  color: var(--gray);
+  font-style: italic;
 }
 
 .vote-count {
-    color: var(--gray);
-
+  color: var(--gray);
 }
 
 .caption-body {
-    color: var(--bright-pink);
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 1rem;
+  color: var(--bright-pink);
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .caption-line {
-    border-bottom: 2px dotted var(--bright-pink);
-    padding: 1rem;
+  border-bottom: 2px dotted var(--bright-pink);
+  padding: 1rem;
 }
 
 .username {
-    color: var(--gray);
-    font-weight:normal;
-    padding-right: 2rem;
+  color: var(--gray);
+  font-weight: normal;
+  padding-right: 2rem;
 }
 
 .divider {
-    color: var(--bright-pink);
+  color: var(--bright-pink);
 }
 
 .like-button {
-    color: var(--bright-pink);
-    background-color: var(--home-blue);
-    text-decoration: none;
-    margin-left: 2px;
+  color: var(--bright-pink);
+  background-color: var(--home-blue);
+  margin-left: 2px;
 }
-
-
-
-
