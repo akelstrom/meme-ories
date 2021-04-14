@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
+import React, { useState, useEffect } from 'react';
+import { Container, Grid } from '@material-ui/core';
 import UserItem from '../UserItem';
 import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,6 +11,10 @@ const UserList = () => {
     const usersState = useSelector(state => state.users);
 
     const { loading, data } = useQuery(QUERY_USERS);
+    const [searchUsers, setSearchUsers] = useState('');
+    const [searchValue, setSearchValue] = useState([]);
+    
+    console.log(searchUsers);
 
     useEffect(() => {
         if (data) {
@@ -19,33 +22,45 @@ const UserList = () => {
                 type: UPDATE_USERS,
                 users: data.users
             });
+            handleSearchChange(searchUsers)
+        } 
 
-        } else if (!loading) {
+        
+    }, [data, loading, searchUsers, dispatch]);
 
-        }
-    }, [data, loading, dispatch]);
+  const handleSearchChange = event => {
+        //const filter = event.target.value;
+        const filteredList = usersState.filter(user => user.username.includes(event) 
+          //let values = 
+           // .join("")
+            //.toLowerCase();
+    );
+        setSearchValue(filteredList);
+        console.log(searchValue, 'Break');
+      }
 
     return (
         <div>
+            <form className="form">
+                    <input
+                        value={searchUsers}
+                        name="search"
+                        /*onChange={event => handleSearchChange(event)}*/
+                        onChange= {e => setSearchUsers(e.target.value)}
+                        type="text"
+                        placeholder="Search"
+                    />
+                </form>
             <Container>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
-                        
-                        {usersState.map(user => (
+                    <Grid item xs={12} sm={12} md={3} lg= {3} className="gridItem">
+                        {searchUsers === '' ? 
+                        usersState.map(user => (
                             <UserItem key={user._id} user={user} />
-                        ))}
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
-                        
-                        {usersState.map(user => (
+                        )) : searchValue
+                        .map(user => (
                             <UserItem key={user._id} user={user} />
-                        ))}
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
-                        
-                        {usersState.map(user => (
-                            <UserItem key={user._id} user={user} />
-                        ))}
+                        ))};
                     </Grid>
                 </Grid>
             </Container>
