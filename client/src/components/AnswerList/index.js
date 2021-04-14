@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import './AnswerList.css';
 import { AiFillLike } from "react-icons/ai";
 
-
 const AnswerList = ({ answers, questionId }) => {
 
   const { data } =  useQuery(QUERY_ME);
