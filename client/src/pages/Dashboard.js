@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
-import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core';
-
-
-//import { useParams } from 'react-router-dom';
-
+import { Container, Grid } from '@material-ui/core';
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_QUESTIONS } from '../utils/queries';
 import Question from '../components/Question';

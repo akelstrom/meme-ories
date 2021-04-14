@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import LeaderboardItem from '../LeaderboardItem';
 import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
-import { UPDATE_FRIENDS } from '../../utils/actions';
+import { UPDATE_FRIENDS, UPDATE_SCORE } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import './Leaderboard.css';
@@ -12,6 +12,7 @@ function Leaderboard() {
     // variables for Redux State, will probably need to adjust later but this is a good baseline
     const dispatch = useDispatch();
     const friendsState = useSelector(state => state.friends);
+    const scoreState = useSelector(state => state.score);
 
     //Query to get the friends data
     const { loading, data } = useQuery(QUERY_ME);
@@ -23,6 +24,10 @@ function Leaderboard() {
             dispatch({
                 type: UPDATE_FRIENDS,
                 friends: data.me.friends
+            });
+            dispatch({
+                type: UPDATE_SCORE,
+                score: data.me.score
             });
 
             data.me.friends.forEach((friend) => {
@@ -51,11 +56,11 @@ function Leaderboard() {
     return (
         <div className="leaderboard-card">
             <h2>🤡 Leaderboard:</h2>
-            {data.me.score === 1 
+            {scoreState === 1 
             ?
-            <p>You have {data.me.score} laugh!</p> 
+            <p>You have {scoreState} laugh!</p> 
             :
-            <p>You have {data.me.score} laughs!</p>
+            <p>You have {scoreState} laughs!</p>
             }
             {friendsState.map(friend => (
                 <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
