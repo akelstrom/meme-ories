@@ -9,7 +9,6 @@ import Leaderboard from "../components/Leaderboard";
 import Auth from "../utils/auth";
 import { Redirect } from "react-router-dom";
 
-
 const Dashboard = () => {
   //This is similar to the query logic that you used on the homepage. The variables loading and data are destructured from the useQuery Hook
   //The loading variable is then used to briefly show a loading <div> element, and the data variable is used to populate a thought object (data.thought)
@@ -40,6 +39,11 @@ const Dashboard = () => {
 
   if (!Auth.loggedIn()) {
     return <Redirect to="/" />;
+  }
+
+  //need to test this
+  if (!navigator.onLine) {
+    return <Leaderboard />;
   }
 
   return (

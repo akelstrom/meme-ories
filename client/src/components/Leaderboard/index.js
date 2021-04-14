@@ -16,14 +16,18 @@ function Leaderboard() {
   //Query to get the friends data
   const { loading, data } = useQuery(QUERY_ME);
 
-  // useEffect outline for storing to global state and saving to indexedDB if there is data and grabbing from indexedDB...
-  // ...if there isn't any because we are offline get the data from indexedDB
-  useEffect(() => {
-    if (data) {
-      dispatch({
-        type: UPDATE_FRIENDS,
-        friends: data.me.friends,
-      });
+    // useEffect outline for storing to global state and saving to indexedDB if there is data and grabbing from indexedDB...
+    // ...if there isn't any because we are offline get the data from indexedDB
+    useEffect(() => {
+        if (data) {
+            dispatch({
+                type: UPDATE_FRIENDS,
+                friends: data.me.friends
+            });
+            dispatch({
+                type: UPDATE_SCORE,
+                score: data.me.score
+            });
 
       data.me.friends.forEach((friend) => {
         idbPromise("friends", "put", friend);
@@ -47,32 +51,24 @@ function Leaderboard() {
           Add Friends!
         </Link>
       </div>
+        
     );
   }
 
   return (
     <div className="leaderboard-card">
-      <h2>🤡 Leaderboard:</h2>
-      {data.me.score === 1 ? (
-        <p>You have {data.me.score} laugh!</p>
-      ) : (
-        <p>You have {data.me.score} laughs!</p>
-      )}
-      <div className="friend-score">
-        {friendsState.map((friend) => (
-          <LeaderboardItem
-            className="user-score"
-            key={friend._id}
-            friend={friend}
-          />
-        ))}
-      </div>
-      <div className="friend-button">
-        <a href="/addFriends" className="link">
-          Find More Friends!
-        </a>
-      </div>
-    </div>
+    <h2>🤡 Leaderboard:</h2>
+    {scoreState === 1 
+    ?
+    <p>You have {scoreState} laugh!</p> 
+    :
+    <p>You have {scoreState} laughs!</p>
+    }
+    {friendsState.map(friend => (
+        <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
+    ))}
+    <Link to='/addFriends' className="link">Find More Friends!</Link>
+</div>
   );
 }
 

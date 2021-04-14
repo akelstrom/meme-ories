@@ -1,4 +1,3 @@
-export const TOGGLE_RULES = 'TOGGLE_RULES';
-export const ADD_FRIEND = 'ADD_FRIEND';
 export const UPDATE_USERS = "UPDATE_USERS";
 export const UPDATE_FRIENDS = "UPDATE_FRIENDS";
+export const UPDATE_SCORE = "UPDATE_SCORE";

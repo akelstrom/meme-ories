@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import { Card, CardMedia, CardContent, Button } from "@material-ui/core";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
-import FaceIcon from "@material-ui/icons/Face";
-import { ADD_FRIEND } from "../../utils/mutations";
-import { useMutation, useQuery } from "@apollo/react-hooks";
-import { useDispatch, useSelector } from "react-redux";
-import { UPDATE_FRIENDS } from "../../utils/actions";
-import { QUERY_ME } from "../../utils/queries";
-import { idbPromise } from "../../utils/helpers";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-import "./UserItem.css";
+import React, { useEffect } from 'react';
+import { CardMedia, CardContent } from '@material-ui/core'
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import FaceIcon from '@material-ui/icons/Face';
+import { ADD_FRIEND } from '../../utils/mutations';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import { useDispatch, useSelector } from 'react-redux';
+import { UPDATE_FRIENDS } from '../../utils/actions';
+import { QUERY_ME } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import './UserItem.css';
 
 const UserItem = ({ user }) => {
   const dispatch = useDispatch();
@@ -28,6 +28,7 @@ const UserItem = ({ user }) => {
       await addFriend({
         variables: { id: id },
       });
+  //window.location.reload();
     } catch (e) {
       console.error(e);
       toast.error("❕ Error: Please Try Again");

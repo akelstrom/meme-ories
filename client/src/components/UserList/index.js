@@ -11,9 +11,16 @@ const UserList = () => {
   const dispatch = useDispatch();
   const usersState = useSelector((state) => state.users);
 
-  const { loading, data } = useQuery(QUERY_USERS);
-  const [searchUsers, setSearchUsers] = useState("");
-  const [searchValue, setSearchValue] = useState([]);
+    const { loading, data } = useQuery(QUERY_USERS);
+    const [searchUsers, setSearchUsers] = useState('');
+    const [searchValue, setSearchValue] = useState([]);
+
+    const handleSearchChange = event => {
+        const filteredList = usersState.filter(user => user.username.includes(event)
+        );
+        setSearchValue(filteredList);
+        console.log(searchValue, 'Break');
+    }
 
   console.log(searchUsers);
 
