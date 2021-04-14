@@ -1,16 +1,16 @@
-
 :root {
   --home-blue: #2f2fa2;
   --deep-purple: #553d67;
-  --bright-pink:#f64c72;
+  --bright-pink: #f64c72;
   --lavendar: #99738e;
-  --dark-blue:#242582;
-  --gray:#cccccc;
+  --dark-blue: #242582;
+  --gray: #cccccc;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--home-blue);
@@ -69,16 +69,17 @@ p {
   color: var(--gray);
 }
 
-.signup-page, .login-page {
+.signup-page,
+.login-page {
   border: var(--bright-pink) dotted 5px;
   border-radius: 10px;
-  box-shadow: -13px 24px var(--bright-pink); 
+  box-shadow: -13px 24px var(--bright-pink);
   width: 90%;
   max-width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 5px;
 }
 
 .Toastify__toast--error img {
@@ -98,7 +99,7 @@ p {
 
 .header2-container {
   display: flex;
-  justify-items:flex-start;
+  justify-items: flex-start;
   padding: 20px;
 }
 
@@ -107,18 +108,22 @@ p {
   border: dotted 3px var(--gray);
 }
 
-@media (max-width: 1000px) { 
-	.MuiContainer-root {
+@media (max-width: 1000px) {
+  .MuiContainer-root {
     padding-left: 24px;
     padding-right: 24px;
     flex-wrap: wrap;
-}
+  }
 
-.signup-page, .login-page {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
+  .signup-page,
+  .login-page {
+    width: 95%;
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+  }
 
-
+  .signup-page {
+    margin-top: 25px;
+  }
 }

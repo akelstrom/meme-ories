@@ -5,19 +5,10 @@ import Auth from "../utils/auth";
 import TextField from "@material-ui/core/TextField";
 import { Container, Grid } from "@material-ui/core/";
 import Login from "./Login";
-// import { makeStyles } from "@material-ui/core/styles";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import gif from "../images/blinking-meme.gif";
 import Header from "../components/Header";
-
-// const useStyles = makeStyles(() => ({
-//   root: {
-//     display: "flex",
-//     justifyContent: "space-around",
-//     marginTop: "20px",
-//   },
-// }));
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -26,8 +17,6 @@ const Signup = () => {
     password: "",
   });
   const [addUser] = useMutation(ADD_USER);
-
-  // const classes = useStyles();
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -62,7 +51,6 @@ const Signup = () => {
 
   return (
     <div>
-      <Header />
       <Container>
         <Grid container spacing={1}>
           <Grid item xs={12} sm={6}>

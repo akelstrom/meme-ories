@@ -44,28 +44,20 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Header/>
-  
       <Container>
-        <Grid container spacing={4} >
-        
-      
-
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6} className="gridItem">
-          
-          <button value="Next" onClick={handleClick} className="link">
+            <button value="Next" onClick={handleClick} className="link">
               Next Meme
-            </button>  
+            </button>
             <Question
               question={question}
               questionText={questionsArray[questionIndex].questionText}
             />
-          <Leaderboard />
-         
+            <Leaderboard />
           </Grid>
-
           <Grid item xs={12} sm={6} className="gridItem">
-          <AnswerList
+            <AnswerList
               answers={questionsArray[questionIndex].answers}
               questionId={questionsArray[questionIndex]._id}
             />
@@ -76,13 +68,8 @@ const Dashboard = () => {
               questionId={questionsArray[questionIndex]._id}
             />
           </Grid>
-
-        
-
-        
-         
         </Grid>
-        </Container>
+      </Container>
     </div>
   );
 };

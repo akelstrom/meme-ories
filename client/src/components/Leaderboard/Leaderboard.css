@@ -1,36 +1,36 @@
 .leaderboard-card {
-    color: var(--bright-pink);
-    background-color: var(--home-blue);
-    border: 5px dotted var(--bright-pink);
-    box-shadow:  -13px 24px var(--bright-pink);
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    padding-bottom: 40px;
-    margin-right: 40px;
+  color: var(--bright-pink);
+  background-color: var(--home-blue);
+  border: 5px dotted var(--bright-pink);
+  box-shadow: -13px 24px var(--bright-pink);
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  padding-bottom: 40px;
+  margin-right: 40px;
 }
 
 h2 {
-    color: var(--gray);
-    margin-left: 30px;
-    padding: 0;
+  color: var(--gray);
+  margin-left: 30px;
+  padding: 0;
 }
 
 .leaderboard-card p {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .item {
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .friend-button {
-    margin-left: 20px;
-    margin-top: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .friend-score {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
