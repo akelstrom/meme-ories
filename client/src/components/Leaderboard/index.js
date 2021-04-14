@@ -10,11 +10,11 @@ import "./Leaderboard.css";
 
 function Leaderboard() {
   // variables for Redux State
-  const dispatch = useDispatch();
-  const friendsState = useSelector((state) => state.friends);
+    const dispatch = useDispatch();
+    const friendsState = useSelector((state) => state.friends);
 
   //Query to get the friends data
-  const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data } = useQuery(QUERY_ME);
 
     // useEffect outline for storing to global state and saving to indexedDB if there is data and grabbing from indexedDB...
     // ...if there isn't any because we are offline get the data from indexedDB
@@ -29,47 +29,46 @@ function Leaderboard() {
                 score: data.me.score
             });
 
-      data.me.friends.forEach((friend) => {
-        idbPromise("friends", "put", friend);
-      });
-    } else if (!loading) {
-      idbPromise("friends", "get").then((friends) => {
-        dispatch({
-          type: UPDATE_FRIENDS,
-          friends: friends,
-        });
-      });
-    }
-  }, [data, loading, dispatch]);
+            data.me.friends.forEach((friend) => {
+                idbPromise("friends", "put", friend);
+            });
+        } else if (!loading) {
+            idbPromise("friends", "get").then((friends) => {
+                dispatch({
+                type: UPDATE_FRIENDS,
+                friends: friends,
+                });
+            });
+        }
+}, [data, loading, dispatch]);
 
-  // If statement for whether the user has friends or not
-  if (!friendsState || !friendsState.length) {
+    // If statement for whether the user has friends or not
+    if (!friendsState || !friendsState.length) {
+        return (
+            <div>
+                <p>Add some friends and see how you match up!</p>
+                <Link className="link" to="/addFriends">
+                Add Friends!
+                </Link>
+            </div>
+        );
+    }
+
     return (
-      <div>
-        <p>Add some friends and see how you match up!</p>
-        <Link className="link" to="/addFriends">
-          Add Friends!
-        </Link>
-      </div>
-        
+        <div className="leaderboard-card">
+            <h2>🤡 Leaderboard:</h2>
+            {scoreState === 1 
+            ?
+            <p>You have {scoreState} laugh!</p> 
+            :
+            <p>You have {scoreState} laughs!</p>
+            }
+            {friendsState.map(friend => (
+                <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
+            ))}
+            <Link to='/addFriends' className="link">Find More Friends!</Link>
+        </div>
     );
-  }
-
-  return (
-    <div className="leaderboard-card">
-    <h2>🤡 Leaderboard:</h2>
-    {scoreState === 1 
-    ?
-    <p>You have {scoreState} laugh!</p> 
-    :
-    <p>You have {scoreState} laughs!</p>
-    }
-    {friendsState.map(friend => (
-        <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
-    ))}
-    <Link to='/addFriends' className="link">Find More Friends!</Link>
-</div>
-  );
 }
 
 export default Leaderboard;
