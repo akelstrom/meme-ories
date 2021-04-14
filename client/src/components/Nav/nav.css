@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: flex-end;
   list-style-type: none;
-  margin: 0;
   background-color: var(--home-blue);
   padding: 0;
   align-items: center;
