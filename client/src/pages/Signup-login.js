@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import gif from '../images/blinking-meme.gif';
+import Header from '../components/Header';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -70,6 +71,8 @@ const Signup = () => {
   };
 
   return (
+    <div>
+      <Header/>
     <Container>
     <Container className={classes.root}>
     <section className='signup-page'>
@@ -116,6 +119,7 @@ const Signup = () => {
   <Login />
   </Container>
   </Container>
+  </div>
   );
 };
 

@@ -7,7 +7,7 @@ import store from './utils/store';
 import { ToastContainer, Zoom } from 'react-toastify';
 
 import Home from './pages/Home';
-import Header from './components/Header';
+// import Header from './components/Header';
 import Signup from './pages/Signup-login';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
@@ -35,7 +35,6 @@ function App() {
       <Router>
         <div>
           <Provider store={store}>
-            <Header />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/signup-login" component={Signup} />

@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import Header from '../components/Header';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -20,6 +21,8 @@ const Home = () => {
     const classes = useStyles();
 
     return (
+        <div>
+            <Header/>
         <Container fixed className={clsx("def-container", classes.root)}>
             <Container className={classes.box} >
              <h1>meme <i>noun</i></h1>
@@ -33,6 +36,7 @@ const Home = () => {
              <p>1. a meme that appears on your social media(meme-ories) dashboard, of which caption is to be determined by user's input. The highest number of votes on a caption wins the right to caption that meme.</p>
              </Container>
         </Container>
+        </div>
     );
 };
 

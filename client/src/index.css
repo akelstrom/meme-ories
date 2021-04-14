@@ -79,3 +79,14 @@ p {
   color: var(--gray);
   text-align: center;
 }
+
+.no-match {
+  color: var(--gray);
+  text-align: center;
+}
+
+.header2-container {
+  display: flex;
+  justify-items:flex-start;
+  padding: 20px;
+}

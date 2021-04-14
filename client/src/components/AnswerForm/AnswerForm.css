@@ -1,6 +1,6 @@
 .caption-textarea {
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 100px;
     margin-top: 2rem;
     border: 3px dotted var(--bright-pink);
     border-radius: 10px;
