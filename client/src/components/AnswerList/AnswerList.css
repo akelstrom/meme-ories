@@ -1,0 +1,45 @@
+.caption-form {
+    border: 3px dotted var(--bright-pink);
+    box-shadow: -13px 20px var(--dark-blue); 
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.caption-header {
+    color: var(--gray);
+}
+
+.posted-by {
+    color: var(--gray);
+    font-style: italic;
+
+}
+
+.vote-count {
+    color: var(--gray);
+
+}
+
+.caption-body {
+    color: var(--bright-pink);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.caption-line {
+    border-bottom: 2px dotted var(--bright-pink);
+    padding: 1rem;
+}
+
+.username {
+    color: var(--gray);
+    font-weight:normal;
+    padding-right: 2rem;
+}
+
+.divider {
+    color: var(--bright-pink);
+}
+

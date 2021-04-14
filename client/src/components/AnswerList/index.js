@@ -7,6 +7,7 @@ import { ADD_SCORE } from '../../utils/mutations';
 import {QUERY_ME} from '../../utils/queries';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import './AnswerList.css';
 
 
 const AnswerList = ({ answers, questionId }) => {
@@ -116,17 +117,19 @@ const AnswerList = ({ answers, questionId }) => {
   return (
     <div>
         <div>
-            <span>Captions:</span>
+            <h1 className="caption-header">Captions:</h1>
         </div>
-        <div>
+        <div className="caption-form">
         { answers &&
             answers.map((answer, index) => (
-            <p key={index}>
-                "{answer.answerBody}" {'| '}
-                posted by: {answer.username} {'|'}
+            <p key={index} className="caption-line">
+                <span className="caption-body">"{answer.answerBody}"</span> <span className="divdier"></span>
+                <span className="posted-by">posted by: <span className="username">{answer.username} </span></span>
                 {/*answer ID: {answer._id} {'|'}*/}
                 vote count: {answer.votes} {' | '}
-                {me!==answer.username && 
+                {/* {me!==answer.username && 
+                <span className="vote-count">vote count: {answer.votes}</span> */}
+                {me!=answer.username && 
                 <button disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>}
             </p>
             ))}

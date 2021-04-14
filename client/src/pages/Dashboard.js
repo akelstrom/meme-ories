@@ -1,4 +1,9 @@
 import React, {useState} from 'react';
+import { Container, Grid, Card, CardHeader, CardMedia, CardContent, Button } from '@material-ui/core';
+
+
+//import { useParams } from 'react-router-dom';
+
 import { useQuery } from '@apollo/react-hooks';
 import { QUERY_QUESTIONS } from '../utils/queries';
 import Question from '../components/Question';
@@ -41,14 +46,36 @@ const Dashboard = () => {
   }
 
   return (
-  <div>
-    <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
+
+  
+    <Container>
+        <Grid container>
+          <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+            <Question question = {question} questionText = {questionsArray[questionIndex].questionText} />
+            </Grid>
+            <Grid item xs={12} sm={12} md={4} lg= {4} className="gridItem">
+            <Leaderboard/>
+
+</Grid>
+            <Grid item xs={12} sm={12} md={8} lg= {8} className="gridItem">
+            <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
+            <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
+            <button value = "Next" onClick = {handleClick}>Next Meme</button>
+          </Grid>
+
+  
+
+</Grid>
+
+
+
+    
+  
+
     {/* this is where the Answer component will go... we need to loop throught them*/}
-    <AnswerList answers = {questionsArray[questionIndex].answers} questionId={questionsArray[questionIndex]._id} />
-    <AnswerForm  questionsArray = {questionsArray} questionIndex = {questionIndex} setQuestionIndex = {setQuestionIndex} questionId = {questionsArray[questionIndex]._id}/> 
-    <button value = "Next" onClick = {handleClick}>Next Meme</button>
-    <Leaderboard />
-  </div>
+    
+    </Container>
+    
   );
 };
 

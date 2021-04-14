@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AnswerForm.css'
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_ANSWER } from '../../utils/mutations';
 import { toast } from 'react-toastify';
@@ -58,9 +59,10 @@ const AnswerForm = ({ questionId, setQuestionIndex, questionIndex, questionsArra
           placeholder="Enter your caption..."
           value= {answerBody}
           onChange={handleChange}
+          className="caption-textarea"
         ></textarea>
 
-        <button type="submit">
+        <button className="link" type="submit">
           Submit
         </button>
       </form>

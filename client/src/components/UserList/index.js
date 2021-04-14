@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container, Grid } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 import UserItem from '../UserItem';
 import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,7 +29,20 @@ const UserList = () => {
         <div>
             <Container>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={3} lg= {3} className="gridItem">
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
+                        {usersState.map(user => (
+                            <UserItem key={user._id} user={user} />
+                        ))}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
+                        {usersState.map(user => (
+                            <UserItem key={user._id} user={user} />
+                        ))}
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={3} lg={3} className="gridItem">
+                        
                         {usersState.map(user => (
                             <UserItem key={user._id} user={user} />
                         ))}

@@ -1,0 +1,9 @@
+.project-card {
+    color: var(--bright-pink);
+    background-color: var(--home-blue);
+    border: 5px dotted var(--bright-pink);
+    box-shadow:  -13px 24px #242582;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 100%;
+}
