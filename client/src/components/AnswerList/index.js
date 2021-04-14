@@ -1,15 +1,18 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 import {useMutation} from '@apollo/react-hooks';
 import {useQuery } from '@apollo/react-hooks';
 import { ADD_VOTE } from '../../utils/mutations';
 import { ADD_SCORE } from '../../utils/mutations';
 import {QUERY_ME} from '../../utils/queries';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import './AnswerList.css';
+import { AiFillLike } from "react-icons/ai";
 
 const AnswerList = ({ answers, questionId }) => {
 
-  const {loading, data } =  useQuery(QUERY_ME);
+  const { data } =  useQuery(QUERY_ME);
 
   let me
   if (data) {
@@ -54,6 +57,7 @@ const AnswerList = ({ answers, questionId }) => {
      } catch(e) {
        console.error(e);
        console.log(error)
+       toast.error('❕ Error: Please Try Again');
      }
 
      try {
@@ -63,6 +67,7 @@ const AnswerList = ({ answers, questionId }) => {
      } catch (e) {
        console.error(e)
        console.log(scoreError)
+       toast.error('❕ Oops, Something Went Wrong');
      }
 
     
@@ -94,7 +99,7 @@ const AnswerList = ({ answers, questionId }) => {
     var arr = []
     for(var i=0; i< answerIdArray.length; i++) {
       for(var j =0; j<answerIds.length; j++) {
-        if(answerIdArray[i]==answerIds[j]) {
+        if(answerIdArray[i]===answerIds[j]) {
           arr.push(answerIdArray[i])
         }
       }
@@ -112,18 +117,18 @@ const AnswerList = ({ answers, questionId }) => {
   return (
     <div>
         <div>
-            <span>Captions:</span>
+            <h1 className="caption-header">Captions:</h1>
         </div>
-        <div>
-        { answers &&
+        <div className="caption-form">
+        {answers &&
             answers.map((answer, index) => (
-            <p key={index}>
-                "{answer.answerBody}" {'| '}
-                posted by: {answer.username} {'|'}
+            <p key={index} className="caption-line">
+                <span className="caption-body">"{answer.answerBody}"</span> <span className="divdier"></span> <br />
+                <span className="posted-by">posted by: <span className="username">{answer.username} </span></span>
                 {/*answer ID: {answer._id} {'|'}*/}
-                vote count: {answer.votes} {' | '}
-                {me!=answer.username && 
-                <button disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>}
+                <span className="vote-count">vote count: {answer.votes}</span>
+                {me!=answer.username &&
+                <button  className="like-button" disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}><AiFillLike/></button>}
             </p>
             ))}
         </div>

@@ -1,0 +1,38 @@
+.leaderboard-card {
+    color: var(--bright-pink);
+    background-color: var(--home-blue);
+    border: 5px dotted var(--bright-pink);
+    box-shadow:  -13px 24px var(--bright-pink);
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    margin-right: 40px;
+}
+
+h2 {
+    color: var(--gray);
+    margin-left: 30px;
+    padding: 0;
+}
+
+.leaderboard-card p {
+    margin-left: 30px;
+}
+
+.item {
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.button {
+    border: 3px dotted var(--bright-pink);
+    border-radius: 10px;
+    padding: 7px;
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 10px;
+}

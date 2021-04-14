@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+import './UserItem.css';
 
 const UserItem = ({ user }) => {
     const dispatch = useDispatch();
@@ -27,6 +30,7 @@ const UserItem = ({ user }) => {
             });
         } catch (e) {
             console.error(e);
+            toast.error('❕ Error: Please Try Again');
         }
     }
 
@@ -51,7 +55,7 @@ const UserItem = ({ user }) => {
     }, [data, loading, dispatch]);
 
     return (
-        <Card elevation={4} className='project-card'>
+        <div className='project-card'>
             <CardMedia>
             </CardMedia>
             <CardContent>
@@ -61,11 +65,11 @@ const UserItem = ({ user }) => {
             {friendedUser ? (
                 <p>Already Friends</p>
             ) : (
-                <Button onClick={handleClick}>Add Friend <PersonAddIcon/></Button>
+                <button className="link" onClick={handleClick}>Add Friend <PersonAddIcon/></button>
             )}
             </center>
             </CardContent>
-        </Card>
+        </div>
     );
 };
 

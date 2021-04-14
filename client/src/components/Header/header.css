@@ -1,0 +1,10 @@
+.header-container {
+    background-color: var(--home-blue);
+    padding: 20px;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+    margin-top: 30px;
+}

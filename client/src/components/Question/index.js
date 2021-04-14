@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Question.css';
 
 //import { Link } from 'react-router-dom';
 
@@ -16,8 +16,8 @@ const Question = ({ questionText, question, questionIndex, setQuestionIndex }) =
 
     return (
         <div>
-            <h3> <img width="40%"
-             height="auto" src={require(`../../images/${questionText}.jpg`).default} alt="meme"/></h3>
+            <h3> <img 
+              src={require(`../../images/${questionText}.jpg`).default} alt="meme" className="meme"/></h3>
             
         </div>
     );

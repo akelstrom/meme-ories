@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_FRIENDS } from '../../utils/actions';
 import { QUERY_ME } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import './Leaderboard.css';
 
 function Leaderboard() {
     // variables for Redux State, will probably need to adjust later but this is a good baseline
@@ -48,13 +49,18 @@ function Leaderboard() {
     }
 
     return (
-        <div>
+        <div className="leaderboard-card">
             <h2>🤡 Leaderboard:</h2>
+            {data.me.score === 1 
+            ?
+            <p>You have {data.me.score} laugh!</p> 
+            :
             <p>You have {data.me.score} laughs!</p>
+            }
             {friendsState.map(friend => (
-                <LeaderboardItem key={friend._id} friend={friend} />
+                <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
             ))}
-            <Link to='/addFriends'>Find More Friends!</Link>
+            <Link to='/addFriends' className="button">Find More Friends!</Link>
         </div>
     );
 }
