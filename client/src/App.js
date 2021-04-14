@@ -4,15 +4,16 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import { Provider } from 'react-redux';
 import store from './utils/store';
+import { ToastContainer, Zoom } from 'react-toastify';
 
 import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Header from './components/Header';
+import Signup from './pages/Signup-login';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import AddFriends from './pages/AddFriends';
-import Nav from './components/Nav';
-import GameRules from './components/GameRules';
+// import Nav from './components/Nav';
+// import GameRules from './components/GameRules';
 import './App.css';
 
 const client = new ApolloClient({
@@ -30,26 +31,32 @@ const client = new ApolloClient({
 function App() {
 
   return (
-
-    
     <ApolloProvider client={client}>
-      
-      <GameRules/>
       <Router>
         <div>
           <Provider store={store}>
-            <Nav />
+            <Header />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/signup-login" component={Signup} />
               <Route exact path='/dashboard' component={Dashboard} />
               <Route exact path='/addFriends' component={AddFriends} />
               <Route component={NoMatch} />
             </Switch>
+            <ToastContainer
+              position='bottom-right'
+              autoClose={5000}
+              hideProgressBar={false}
+              closeOnClick
+              pausOnFocusLoss
+              draggable
+              pauseOnHover
+              transition={Zoom}
+            />
           </Provider>
         </div>
       </Router>
+      
     </ApolloProvider>
   );
 }
