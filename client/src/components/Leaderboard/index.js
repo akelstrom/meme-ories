@@ -33,11 +33,20 @@ function Leaderboard() {
             data.me.friends.forEach((friend) => {
                 idbPromise('friends', 'put', friend);
             });
+
+            idbPromise('score', 'put', data.me.score);
+
         } else if (!loading) {
             idbPromise('friends', 'get').then((friends) => {
                 dispatch({
                     type: UPDATE_FRIENDS,
                     friends: friends
+                });
+            });
+            idbPromise('score', 'get').then((score) => {
+                dispatch({
+                    type: UPDATE_SCORE,
+                    score: score
                 });
             });
         }
