@@ -28,7 +28,7 @@ const UserList = () => {
         
     }, [data, loading, searchUsers, dispatch]);
 
-  const handleSearchChange = event => {
+    const handleSearchChange = event => {
         //const filter = event.target.value;
         const filteredList = usersState.filter(user => user.username.includes(event) 
           //let values = 
@@ -37,7 +37,7 @@ const UserList = () => {
     );
         setSearchValue(filteredList);
         console.log(searchValue, 'Break');
-      }
+    }
 
     return (
         <div>
@@ -57,8 +57,7 @@ const UserList = () => {
                         {searchUsers === '' ? 
                         usersState.map(user => (
                             <UserItem key={user._id} user={user} />
-                        )) : searchValue
-                        .map(user => (
+                        )) : searchValue.map(user => (
                             <UserItem key={user._id} user={user} />
                         ))};
                     </Grid>

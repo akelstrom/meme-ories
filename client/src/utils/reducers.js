@@ -1,30 +1,17 @@
 import {
-    // ACTIONS HERE
-    TOGGLE_RULES,
-    ADD_FRIEND,
     UPDATE_USERS,
-    UPDATE_FRIENDS
+    UPDATE_FRIENDS,
+    UPDATE_SCORE,
 } from './actions';
 
 const initialState = {
-    rulesOpen: false,
     friends: [],
     users: [],
+    score: 0,
 };
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case TOGGLE_RULES:
-            return {
-                ...state,
-                rulesOpen: !state.rulesOpen
-            };
-        
-        case ADD_FRIEND:
-            return {
-                ...state,
-                friends: [...state.friends, action.friend]
-            };
 
         case UPDATE_FRIENDS:
             return {
@@ -37,6 +24,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 users: [...action.users]
             };
+
+        case UPDATE_SCORE:
+            return {
+                ...state,
+                score: [action.score]
+            }
         
         default:
             return state;
