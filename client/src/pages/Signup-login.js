@@ -61,7 +61,7 @@ const Signup = () => {
     } catch (e) {
       console.error(e);
       toast.error(
-        <div className='toast'>
+        <div className='toast-img'>
           <img src={gif} alt='error' />
           Signup Failed: Please Try Again!
         </div>

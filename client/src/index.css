@@ -70,6 +70,10 @@ p {
   flex-direction: column;
 }
 
+.Toastify__toast--error img {
+  width: 100%;
+}
+
 .Toastify__toast--error {
   background: var(--bright-pink) !important;
   color: var(--gray);
