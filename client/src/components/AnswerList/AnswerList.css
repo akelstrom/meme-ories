@@ -44,12 +44,10 @@
 }
 
 .like-button {
-    all: unset;
     color: var(--bright-pink);
     background-color: var(--home-blue);
     text-decoration: none;
     padding: 0.5rem;
-  
 }
 
 
