@@ -6,7 +6,7 @@ import { ADD_VOTE } from '../../utils/mutations';
 import { ADD_SCORE } from '../../utils/mutations';
 import {QUERY_ME} from '../../utils/queries';
 import './AnswerList.css';
-
+import { AiFillLike } from "react-icons/ai";
 
 const AnswerList = ({ answers, questionId }) => {
 
@@ -119,12 +119,12 @@ const AnswerList = ({ answers, questionId }) => {
         { answers &&
             answers.map((answer, index) => (
             <p key={index} className="caption-line">
-                <span className="caption-body">"{answer.answerBody}"</span> <span className="divdier"></span>
+                <span className="caption-body">"{answer.answerBody}"</span> <span className="divdier"></span> <br />
                 <span className="posted-by">posted by: <span className="username">{answer.username} </span></span>
                 {/*answer ID: {answer._id} {'|'}*/}
                 <span className="vote-count">vote count: {answer.votes}</span>
                 {me!=answer.username && 
-                <button disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}>add vote</button>}
+                <button  className="like-button" disabled= {matches.includes(answer._id)} id={answer.username} name={answer.votes} value={answer._id} onClick={handleClick}><AiFillLike/></button>}
             </p>
             ))}
         </div>
