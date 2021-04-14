@@ -43,7 +43,7 @@ function Leaderboard() {
         return (
             <div>
                 <p>Add some friends and see how you match up!</p>
-                <Link to='/addFriends'>Add Friends!</Link>
+                <Link className="link" to='/addFriends'>Add Friends!</Link>
             </div>
         ) 
     }
@@ -57,11 +57,16 @@ function Leaderboard() {
             :
             <p>You have {data.me.score} laughs!</p>
             }
+            <div className="friend-score">
             {friendsState.map(friend => (
                 <LeaderboardItem className="user-score" key={friend._id} friend={friend} />
             ))}
-            <Link to='/addFriends' className="button">Find More Friends!</Link>
+            </div>
+            <div className="friend-button">
+            <a to='/addFriends' className="link">Find More Friends!</a>
+            </div>
         </div>
+
     );
 }
 

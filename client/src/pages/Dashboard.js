@@ -47,7 +47,7 @@ const Dashboard = () => {
       <Header/>
   
       <Container>
-        <Grid container spacing={3} >
+        <Grid container spacing={4} >
         
       
 
@@ -79,10 +79,7 @@ const Dashboard = () => {
 
         
 
-          <Grid item xs={12} sm={3} className="gridItem">
-          
-          
-          </Grid>
+        
          
         </Grid>
         </Container>

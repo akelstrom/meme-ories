@@ -25,7 +25,6 @@
     color: var(--bright-pink);
     font-size: 1rem;
     font-weight: bold;
-    padding: 1rem;
 }
 
 .caption-line {
@@ -46,7 +45,6 @@
 .like-button {
     color: var(--bright-pink);
     background-color: var(--home-blue);
-    text-decoration: none;
     margin-left: 2px;
 }
 

@@ -1,5 +1,5 @@
 .caption-textarea {
-    width: 600px;
+    width: 100%;
     height: 100px;
     margin-top: 2rem;
     border: 3px dotted var(--bright-pink);

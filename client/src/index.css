@@ -38,6 +38,15 @@ p {
 
 .def-container {
   color: var(--bright-pink);
+  margin-left: 10px;
+}
+
+.box {
+  border: dotted 5px var(--bright-pink);
+  border-radius: 10px;
+  box-shadow: -13px 24px var(--bright-pink);
+  width: 60%;
+  color: var(--bright-pink);
 }
 
 .contact-header {
@@ -89,4 +98,9 @@ p {
   display: flex;
   justify-items:flex-start;
   padding: 20px;
+}
+
+.link:hover {
+  background-color: var(--bright-pink);
+  border: dotted 3px var(--gray);
 }

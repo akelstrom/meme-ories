@@ -1,0 +1,15 @@
+.search-form {
+    border: 2px dotted var(--bright-pink);
+    background-color: var(--home-blue);
+    color: var(--bright-pink);
+    border-radius: 10px;
+    box-shadow: -3px 4px var(--bright-pink); 
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+}
+
+.search-caption {
+    color: var(--gray);
+    margin: 10px 0;
+}

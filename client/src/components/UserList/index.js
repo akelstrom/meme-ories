@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_USERS } from '../../utils/actions';
 import { QUERY_USERS } from '../../utils/queries';
+import "./UserList.css";
 
 const UserList = () => {
     const dispatch = useDispatch();
@@ -41,19 +42,26 @@ const UserList = () => {
 
     return (
         <div>
-            <form className="form">
+             
+           
+            <Container>
+            <Grid item xs={6}>
+            <form >
+                <h3 className="search-caption">Search here for some friends to compete against!</h3>
                     <input
                         value={searchUsers}
                         name="search"
                         /*onChange={event => handleSearchChange(event)}*/
                         onChange= {e => setSearchUsers(e.target.value)}
                         type="text"
-                        placeholder="Search"
+                        placeholder="Start typing name here"
+                        className="search-form"
                     />
                 </form>
-            <Container>
+                    </Grid>
+         
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={3} lg= {3} className="gridItem">
+                    <Grid item xs={12}className="gridItem">
                         {searchUsers === '' ? 
                         usersState.map(user => (
                             <UserItem key={user._id} user={user} />

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import Login from './Login';
@@ -19,17 +18,6 @@ const useStyles = makeStyles(() => ({
         marginTop: "20px"
     }
 }));
-
-const Button = styled.button`
-  border: 3px dotted var(--bright-pink);
-  color: var(--gray);
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  margin: 5px;
-  background-color: var(--home-blue)
-`
 
 const Signup = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
@@ -112,7 +100,7 @@ const Signup = () => {
         />
       </div>
       <div className='contact-div'>
-        <Button>Submit</Button>
+        <button className="link">Submit</button>
       </div>
     </form>
   </section>

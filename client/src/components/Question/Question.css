@@ -3,5 +3,14 @@
     border-radius: 10px;
     box-shadow: -13px 24px var(--dark-blue); 
     height: auto;
-    margin-left: 20px;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
 }
+
+.meme-container {
+    margin-top: 15px;
+}
+
+
+

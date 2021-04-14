@@ -5,19 +5,8 @@ import Auth from '../utils/auth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import gif from '../images/blinking-meme.gif';
-import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField';
 
-const Button = styled.button`
-  border: 3px dotted var(--bright-pink);
-  color: var(--gray);
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  margin: 5px;
-  background-color: var(--home-blue)
-`
 
 const Login = props => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -87,7 +76,7 @@ const Login = props => {
           />
         </div>
         <div className='contact-div'>
-        <Button>Submit</Button>
+        <button className="link">Submit</button>
         </div>
       </form>
     </section>
