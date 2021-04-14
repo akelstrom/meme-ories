@@ -63,7 +63,7 @@ function Leaderboard() {
             ))}
             </div>
             <div className="friend-button">
-            <a to='/addFriends' className="link">Find More Friends!</a>
+            <a href='/addFriends' className="link">Find More Friends!</a>
             </div>
         </div>
 

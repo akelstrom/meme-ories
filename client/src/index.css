@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 
 :root {
   --home-blue: #2f2fa2;
@@ -74,9 +73,12 @@ p {
   border: var(--bright-pink) dotted 5px;
   border-radius: 10px;
   box-shadow: -13px 24px var(--bright-pink); 
-  width: 40%;
+  width: 90%;
+  max-width: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
+  margin: 10px;
 }
 
 .Toastify__toast--error img {
@@ -103,4 +105,20 @@ p {
 .link:hover {
   background-color: var(--bright-pink);
   border: dotted 3px var(--gray);
+}
+
+@media (max-width: 1000px) { 
+	.MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+    flex-wrap: wrap;
+}
+
+.signup-page, .login-page {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+
 }
