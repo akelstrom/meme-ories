@@ -1,0 +1,31 @@
+.helpIcon {
+    font-size: 1.05rem;
+}
+
+.rules-container {
+    background-color: var(--home-blue);
+    height: 100%;
+    display: flex;
+}
+
+.rules-container p {
+    color: var(--bright-pink);
+    margin-left: 25px;
+}
+
+.rules-container ul li {
+    color: var(--bright-pink);
+}
+
+.rules-container h1 {
+    color: var(--bright-pink);
+    margin-left: 25px;
+    text-align: center;
+}
+
+.rules-container img {
+    margin-left: 160px;
+    width: 60%;
+    height: auto;
+    
+}

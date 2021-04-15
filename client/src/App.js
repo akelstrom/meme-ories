@@ -5,15 +5,12 @@ import ApolloClient from 'apollo-boost';
 import { Provider } from 'react-redux';
 import store from './utils/store';
 import { ToastContainer, Zoom } from 'react-toastify';
-
 import Home from './pages/Home';
 import Header from './components/Header';
 import Signup from './pages/Signup-login';
 import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import AddFriends from './pages/AddFriends';
-// import Nav from './components/Nav';
-// import GameRules from './components/GameRules';
 import './App.css';
 
 const client = new ApolloClient({
