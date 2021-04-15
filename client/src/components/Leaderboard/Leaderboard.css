@@ -34,3 +34,7 @@ h2 {
 .friend-score {
   margin-bottom: 10px;
 }
+
+.addfriend-caption {
+  color: var(--bright-pink);
+}

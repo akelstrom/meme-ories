@@ -56,7 +56,7 @@ function Leaderboard() {
     if (!friendsState || !friendsState.length) {
         return (
             <div>
-                <p>Add some friends and see how you match up!</p>
+                <h2 className="addfriend-caption">Add some friends and see how you match up!</h2>
                 <Link className="link" to="/addFriends">
                 Add Friends!
                 </Link>
