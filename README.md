@@ -38,17 +38,17 @@ https://m3m3-ories.herokuapp.com/
 * Adobe Photoshop
 ## Contributors
 * Alexandra Kelstrom
-* Stefanie Tinsley
+* Stefanie Pires
 * Kristy Zurmuhlen
 * Joshua Beedle
 ## Credits
-Special thanks to our awesome TAs, Andy Durette, Symone Varnado, Nate Sopko, Chris Hackett, our instructor, Chase Clettenberg, and tutor, Jon Jackson!
+Special thanks to our awesome TAs, Andy Durette, Symone Varnado, Nate Sopko, Chris Hackett, our instructor, Chase Clettenberg, and tutors, Jon Jackson, Josh Naylor, and Joseph Young!
 ## Questions
 If you have any additional questions please reach out to us through email or GitHub.
 
 Name | GitHub | Email
 ---- | ------ | -----
 Alexandra Kelstrom | https://github.com/akelstrom | akelstrom@gmail.com
-Stefanie Tinsley |https://github.com/stefaniepires | stefaniectinsley@gmail.com
+Stefanie Pires |https://github.com/stefaniepires | stefaniectinsley@gmail.com
 Kristy Zurmuhlen |https://github.com/Kristy-coding| kristyzurmuhlen@gmail.com
 Joshua Beedle |https://github.com/jbeedle19 | josh.beedle@gmail.com
