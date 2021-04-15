@@ -121,6 +121,7 @@ p {
     height: auto;
     display: flex;
     box-sizing: border-box;
+    margin-top: 10px;
   }
 
   .signup-page {
