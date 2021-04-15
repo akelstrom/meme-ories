@@ -25,10 +25,13 @@ const UserItem = ({ user }) => {
 
   const handleClick = async () => {
     try {
-      await addFriend({
+      const {data: {addFriend: {friends:  newFriends}}} = await addFriend({
         variables: { id: id },
       });
-  //window.location.reload();
+      dispatch({
+        type: UPDATE_FRIENDS,
+        friends: newFriends,
+      });
     } catch (e) {
       console.error(e);
       toast.error("❕ Error: Please Try Again");
