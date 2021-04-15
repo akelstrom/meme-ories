@@ -9,11 +9,11 @@ import { idbPromise } from "../../utils/helpers";
 import "./Leaderboard.css";
 
 function Leaderboard() {
-  // variables for Redux State
-  const dispatch = useDispatch();
-  const friendsState = useSelector((state) => state.friends);
-  const scoreState = useSelector(state => state.score);
-  
+    // variables for Redux State
+    const dispatch = useDispatch();
+    const friendsState = useSelector((state) => state.friends);
+    const scoreState = useSelector(state => state.score);
+
   //Query to get the friends data
     const { loading, data } = useQuery(QUERY_ME);
 
@@ -33,11 +33,20 @@ function Leaderboard() {
             data.me.friends.forEach((friend) => {
                 idbPromise("friends", "put", friend);
             });
+
+            idbPromise('score', 'put', data.me.score);
+
         } else if (!loading) {
             idbPromise("friends", "get").then((friends) => {
                 dispatch({
                 type: UPDATE_FRIENDS,
                 friends: friends,
+                });
+            });
+            idbPromise('score', 'get').then((score) => {
+                dispatch({
+                    type: UPDATE_SCORE,
+                    score: score
                 });
             });
         }

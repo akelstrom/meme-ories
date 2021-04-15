@@ -22,8 +22,6 @@ const UserList = () => {
         console.log(searchValue, 'Break');
     }
 
-  console.log(searchUsers);
-
   useEffect(() => {
     if (data) {
       dispatch({
@@ -33,7 +31,6 @@ const UserList = () => {
       handleSearchChange(searchUsers);
     }
   }, [data, loading, searchUsers, dispatch]);
-
 
   return (
     <div>
