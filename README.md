@@ -19,9 +19,9 @@ When a caption is liked then that “like” gets added to the user’s laugh sc
 AS A USER </br>
 I will be able to add friends to my friend list and compete with them on the leaderboard for users that generate the most “laughs”.
 ## Usage
-![Walkthrough](placeholder.gif)
+![Walkthrough](./walkthrough.gif)
 
-[Video Link](placeholder-vid-link)
+[Video Link](https://drive.google.com/file/d/1vKHSK7fXU16bTmMcwLJupThx1ljDEatN/view)
 ## Website
 https://m3m3-ories.herokuapp.com/
 ## Built With
